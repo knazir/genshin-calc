@@ -20,6 +20,11 @@ const Calculator = ({ data }) => {
     doesShatter: false,
     doesApplyElementalBonus: true
   });
+  const [characterStats, setCharacterStats] = useState(data.characterStats || {
+    critRate: 5,
+    critDamage: 50,
+    energyRecharge: 100
+  });
 
   return (
     <div className="calculator">
@@ -27,7 +32,7 @@ const Calculator = ({ data }) => {
       <div className="characterPanels">
         <CharacterInfo defaultData={characterData} onData={setCharacterData}/>
         <SkillInfo defaultData={skillData} onData={setSkillData}/>
-        <StatPanel title="Character Stats"/>
+        <StatPanel title="Character Stats" defaultData={characterStats} onData={setCharacterStats}/>
       </div>
     </div>
   );

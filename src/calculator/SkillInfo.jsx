@@ -46,7 +46,7 @@ const SkillInfo = ({ defaultData, onData }) => {
   };
 
   // DOM Elements
-  const elementTypeItems = elements.elements.map(element => {
+  const elementItems = elements.elements.map(element => {
     return <MenuItem key={element} value={element}>{StringUtils.capitalize(element)}</MenuItem>;
   });
   const doesShatterCheckbox = <Checkbox checked={doesShatter} onChange={onDoesShatter}/>;
@@ -61,7 +61,7 @@ const SkillInfo = ({ defaultData, onData }) => {
       <FormControl>
         <InputLabel id="elementLabel">Element</InputLabel>
         <Select id="element" labelId="elementLabel" value={element} onChange={onElement}>
-          {elementTypeItems}
+          {elementItems}
         </Select>
       </FormControl>
       <FormControlLabel control={doesShatterCheckbox} label="Damage Shatters"/>

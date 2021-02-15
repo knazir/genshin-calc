@@ -1,3 +1,28 @@
 .statPanel {
 
 }
+
+.statRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.statRow > .statLabel {
+  flex: 1;
+}
+
+.statRow > .statInput {
+  margin-left: 0.5em;
+}
+
+.newStatForm {
+  display: flex;
+  align-items: baseline;
+  flex: 1;
+}
+
+.newStatForm .newStatSelect {
+  flex: 1;
+  margin-right: 0.5em;
+}
