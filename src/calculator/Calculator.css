@@ -5,11 +5,18 @@
   padding: 1em 1.5em;
 }
 
+.panels {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  grid-gap: 0.5em;
+}
+
 .formPanel {
   display: flex;
   flex-direction: column;
   padding: 0.5em;
-  min-width: 400px;
+  height: 35vh;
 }
 
 .characterPanels > *:not(:last-child), .formPanel > *:not(:last-child) {

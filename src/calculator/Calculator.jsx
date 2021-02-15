@@ -25,14 +25,16 @@ const Calculator = ({ data }) => {
     critDamage: 50,
     energyRecharge: 100
   });
+  const [weaponStats, setWeaponStats] = useState(data.weaponStats || {});
 
   return (
     <div className="calculator">
       <Typography variant="h3" gutterBottom>Damage Calculator</Typography>
-      <div className="characterPanels">
+      <div className="panels">
         <CharacterInfo defaultData={characterData} onData={setCharacterData}/>
         <SkillInfo defaultData={skillData} onData={setSkillData}/>
         <StatPanel title="Character Stats" defaultData={characterStats} onData={setCharacterStats}/>
+        <StatPanel title="Weapon Stats" defaultData={weaponStats} onData={setWeaponStats}/>
       </div>
     </div>
   );

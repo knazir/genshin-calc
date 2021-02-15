@@ -1,5 +1,11 @@
 .statPanel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+.appliedStats {
+  overflow: auto;
 }
 
 .statRow {
@@ -18,8 +24,9 @@
 
 .newStatForm {
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   flex: 1;
+  margin-bottom: 0.25em;
 }
 
 .newStatForm .newStatSelect {
