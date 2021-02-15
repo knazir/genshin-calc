@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import {
-  Paper
+  Paper,
+  Typography
 } from "@material-ui/core";
 
-const StatPanel = () => {
+const StatPanel = ({ title }) => {
   // State
   const [stats, setState] = useState([]);
 
   return (
-    <Paper className="statPanel">
-
+    <Paper className="statPanel formPanel">
+      <Typography variant="h5">{title}</Typography>
     </Paper>
   );
 };

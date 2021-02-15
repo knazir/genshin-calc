@@ -37,7 +37,7 @@ const CharacterInfo = ({ defaultData, onData }) => {
   });
 
   return (
-    <Paper className="characterInfo">
+    <Paper className="characterInfo formPanel">
       <Typography variant="h5">Character Info</Typography>
       <TextField id="characterLevel" label="Level" type="number" value={level} onChange={onLevel}/>
       <FormControl>

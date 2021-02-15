@@ -1,10 +1,3 @@
 .characterInfo {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5em;
-  min-width: 400px;
-}
 
-.characterInfo > *:not(:last-child) {
-  margin-bottom: 0.25em;
 }

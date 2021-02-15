@@ -5,6 +5,7 @@ import {
 
 import CharacterInfo from "./CharacterInfo";
 import SkillInfo from "./SkillInfo";
+import StatPanel from "./StatPanel";
 import "./Calculator.css";
 
 const Calculator = ({ data }) => {
@@ -26,6 +27,7 @@ const Calculator = ({ data }) => {
       <div className="characterPanels">
         <CharacterInfo defaultData={characterData} onData={setCharacterData}/>
         <SkillInfo defaultData={skillData} onData={setSkillData}/>
+        <StatPanel title="Character Stats"/>
       </div>
     </div>
   );

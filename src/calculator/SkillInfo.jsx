@@ -54,7 +54,7 @@ const SkillInfo = ({ defaultData, onData }) => {
                                                     onChange={onDoesApplyElementalBonus}/>;
 
   return (
-    <Paper className="skillInfo">
+    <Paper className="skillInfo formPanel">
       <Typography variant="h5">Skill Info</Typography>
       <TextField id="skillDamage" label="Damage (%)" type="number" value={damage} onChange={onDamage}/>
       <TextField id="skillDamage" label="Bonus Damage (%)" type="number" value={bonusDamage} onChange={onBonusDamage}/>

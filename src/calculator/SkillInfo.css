@@ -1,11 +1,4 @@
 .skillInfo {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5em;
-  min-width: 400px;
-}
 
-.skillInfo > *:not(:last-child) {
-  margin-bottom: 0.25em;
 }
 
