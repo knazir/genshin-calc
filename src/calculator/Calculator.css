@@ -4,3 +4,7 @@
   align-items: flex-start;
   padding: 1em 1.5em;
 }
+
+.characterPanels > *:not(:last-child) {
+  margin-bottom: 0.5em;
+}
