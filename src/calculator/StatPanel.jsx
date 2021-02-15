@@ -86,7 +86,9 @@ const StatPanel = ({ defaultData, onData, readOnly, requiredStats = [], title })
       </FormGroup>
     );
   });
-  const statTypeItems = Object.entries(stats).map(([type, name]) => {
+  const statTypeItems = Object.entries(stats).filter(([typeToFind, _]) => {
+    return appliedStats.findIndex(({ type }) => type === typeToFind) === -1;
+  }).map(([type, name]) => {
     return <MenuItem key={type} value={type}>{name}</MenuItem>;
   });
 
