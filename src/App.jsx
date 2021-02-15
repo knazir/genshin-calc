@@ -8,13 +8,12 @@ import {
   useMediaQuery
 } from "@material-ui/core";
 
-import Calculator from "./Calculator";
-import Welcome from "./Welcome";
-
+import Calculator from "./calculator/Calculator";
+import Welcome from "./main/Welcome";
 import "./App.css";
 
 const App = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
   const [saveData, setSaveData] = useState({});
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
@@ -42,11 +41,11 @@ const App = () => {
             ? <Welcome loadApp={loadApp}/>
             : <Calculator data={saveData}/>
         }
-        <footer>
+        <div className="credits">
           <Typography>
             View on <Link href="https://github.com/knazir/genshin-calc">GitHub</Link>
           </Typography>
-        </footer>
+        </div>
       </div>
     </ThemeProvider>
   );

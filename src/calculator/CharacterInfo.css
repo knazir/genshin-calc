@@ -1,0 +1,10 @@
+.characterInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  min-width: 400px;
+}
+
+.characterInfo > * {
+  margin-bottom: 0.25em;
+}
