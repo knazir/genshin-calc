@@ -43,7 +43,7 @@ const App = () => {
         }
         <div className="credits">
           <Typography>
-            View on <Link href="https://github.com/knazir/genshin-calc">GitHub</Link>
+            View on <Link href="https://github.com/knazir/genshin-calc" target="_blank">GitHub</Link>
           </Typography>
         </div>
       </div>
