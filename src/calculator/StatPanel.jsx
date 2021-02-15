@@ -17,7 +17,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import stats from "../data/stats";
 import "./StatPanel.css";
 
-const StatPanel = ({ defaultData, onData, title }) => {
+const StatPanel = ({ defaultData, onData, readOnly, title }) => {
   // State
   let defaultAppliedStats = [];
   if (defaultData) {
@@ -30,7 +30,7 @@ const StatPanel = ({ defaultData, onData, title }) => {
   useEffect(() => {
     const statsObj = {};
     appliedStats.forEach(({ type, value }) => statsObj[type] = value);
-    onData(statsObj);
+    if (onData) onData(statsObj);
   }, [appliedStats, onData]);
 
   // Event Handlers
@@ -53,7 +53,7 @@ const StatPanel = ({ defaultData, onData, title }) => {
     setNewStatType(e.target.value);
   };
   const onNewStatTypeAdd = () => {
-    if (appliedStats.find(({ type }) => type === newStatType) != null) return;
+    if (!newStatType || appliedStats.find(({ type }) => type === newStatType) != null) return;
     setAppliedStats([...appliedStats, { type: newStatType, value: 0 }]);
   };
 
@@ -65,8 +65,12 @@ const StatPanel = ({ defaultData, onData, title }) => {
       <FormGroup key={type} row className="statRow">
         <IconButton aria-label="delete" onClick={() => onStatDelete(type)}><DeleteIcon/></IconButton>
         <Typography className="statLabel">{name}</Typography>
-        <TextField id={`${type}Input`} className="statInput" type="number" inputProps={inputProps} value={value}
-                   onChange={e => onStatChange(e, type)}/>
+        {
+          readOnly
+            ? <Typography>{value}</Typography>
+            :  <TextField id={`${type}Input`} className="statInput" type="number" inputProps={inputProps} value={value}
+                                                             onChange={e => onStatChange(e, type)}/>
+        }
       </FormGroup>
     );
   });
@@ -80,15 +84,18 @@ const StatPanel = ({ defaultData, onData, title }) => {
       <div className="appliedStats">
         {statInputs}
       </div>
-      <FormGroup row className="newStatForm">
-        <FormControl className="newStatSelect">
-          <InputLabel id="newStatTypeLabel">New Stat</InputLabel>
-          <Select id="newStatType" labelId="newStatTypeLabel" value={newStatType} onChange={onNewStatTypeSelect}>
-            {statTypeItems}
-          </Select>
-        </FormControl>
-        <Button variant="contained" startIcon={<AddIcon/>} onClick={onNewStatTypeAdd}>Add</Button>
-      </FormGroup>
+      {
+        !readOnly &&
+        <FormGroup row className="newStatForm">
+          <FormControl className="newStatSelect">
+            <InputLabel id="newStatTypeLabel">New Stat</InputLabel>
+            <Select id="newStatType" labelId="newStatTypeLabel" value={newStatType} onChange={onNewStatTypeSelect}>
+              {statTypeItems}
+            </Select>
+          </FormControl>
+          <Button variant="contained" startIcon={<AddIcon/>} onClick={onNewStatTypeAdd}>Add</Button>
+        </FormGroup>
+      }
     </Paper>
   );
 };

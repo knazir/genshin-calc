@@ -1,3 +1,10 @@
+.calculator > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+
 .calculator {
   display: flex;
   flex-direction: column;
@@ -5,18 +12,16 @@
   padding: 1em 1.5em;
 }
 
-.panels {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-auto-flow: column;
-  grid-gap: 0.5em;
+.tabContent {
+  width: 100%;
 }
 
 .formPanel {
   display: flex;
   flex-direction: column;
   padding: 0.5em;
-  height: 35vh;
+  height: 100%;
+  width: 100%;
 }
 
 .characterPanels > *:not(:last-child), .formPanel > *:not(:last-child) {
