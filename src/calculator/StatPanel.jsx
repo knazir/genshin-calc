@@ -17,12 +17,16 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import stats from "../data/stats";
 import "./StatPanel.css";
 
-const StatPanel = ({ defaultData, onData, readOnly, title }) => {
+const StatPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }) => {
   // State
   let defaultAppliedStats = [];
   if (defaultData) {
     defaultAppliedStats = Object.entries(defaultData).map(([type, value]) => { return { type, value }; });
   }
+  requiredStats.forEach(requiredStatType => {
+    const existingIndex = defaultAppliedStats.findIndex(({ type }) => type === requiredStatType);
+    if (existingIndex === -1) defaultAppliedStats.push({ type: requiredStatType, value: 0 });
+  });
   const [appliedStats, setAppliedStats] = useState(defaultAppliedStats);
   const [newStatType, setNewStatType] = useState("");
 
@@ -45,6 +49,7 @@ const StatPanel = ({ defaultData, onData, readOnly, title }) => {
     ]);
   };
   const onStatDelete = typeToDelete => {
+    if (requiredStats.indexOf(typeToDelete) !== -1) return;
     const existingIndex = appliedStats.findIndex(({ type }) => type === typeToDelete);
     if (existingIndex === -1) return;
     setAppliedStats([...appliedStats.slice(0, existingIndex), ...appliedStats.slice(existingIndex + 1)]);
@@ -60,10 +65,12 @@ const StatPanel = ({ defaultData, onData, readOnly, title }) => {
   // DOM Elements
   const statInputs = appliedStats.map(({ type, value }) => {
     const name = stats[type];
+    const canDeleteStat = requiredStats.indexOf(type) === -1;
     const inputProps = { style: { textAlign: "right" } };
     return (
       <FormGroup key={type} row className="statRow">
-        <IconButton aria-label="delete" onClick={() => onStatDelete(type)}><DeleteIcon/></IconButton>
+        <IconButton aria-label="delete" disabled={!canDeleteStat}
+                    onClick={() => onStatDelete(type)}><DeleteIcon/></IconButton>
         <Typography className="statLabel">{name}</Typography>
         {
           readOnly

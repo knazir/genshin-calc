@@ -21,7 +21,7 @@ const Calculator = ({ data }) => {
   const [saveDataText, setSaveDataText] = useState("");
   const [tab, setTab] = useState(0);
   const [character, setCharacter] = useState(data.character || {
-    level: 0,
+    level: 90,
     weaponType: "",
   });
   const [enemy, setEnemy] = useState(data.enemy || {
@@ -44,8 +44,12 @@ const Calculator = ({ data }) => {
   });
   const [weaponStats, setWeaponStats] = useState(data.weaponStats || {});
   const [setEffectsStats, setSetEffectsStats] = useState(data.setEffectsStats || {});
-  const [flowerStats, setFlowerStats] = useState(data.flowerStats || {});
-  const [featherStats, setFeatherStats] = useState(data.featherStats || {});
+  const [flowerStats, setFlowerStats] = useState(data.flowerStats || {
+    hp: 0
+  });
+  const [featherStats, setFeatherStats] = useState(data.featherStats || {
+    atk: 0
+  });
   const [timepieceStats, setTimepieceStats] = useState(data.timepieceStats || {});
   const [gobletStats, setGobletStats] = useState(data.gobletStats || {});
   const [hatStats, setHatStats] = useState(data.hatStats || {});
@@ -69,7 +73,7 @@ const Calculator = ({ data }) => {
     setTab(value);
   };
 
-  // TODO: Break this up into separate components
+  // TODO: Break this up into separate components and create a "increase x by y percentage of z" component
   return (
     <div className="calculator">
       <header>
@@ -107,12 +111,13 @@ const Calculator = ({ data }) => {
         {
           tab === 1 &&
           <>
-            <GridList cellHeight={300} spacing={10} cols={3}>
+            <GridList cellHeight={500} spacing={10} cols={3}>
               <GridListTile cols={1}>
-                <StatPanel title="Character" defaultData={characterStats} onData={setCharacterStats}/>
+                <StatPanel title="Character" defaultData={characterStats} onData={setCharacterStats}
+                           requiredStats={["atk", "def", "hp", "critRate", "critDamage", "energyRecharge"]}/>
               </GridListTile>
               <GridListTile cols={1}>
-                <StatPanel title="Weapon" defaultData={weaponStats} onData={setWeaponStats}/>
+                <StatPanel title="Weapon" defaultData={weaponStats} onData={setWeaponStats} requiredStats={["atk"]}/>
               </GridListTile>
             </GridList>
           </>
@@ -122,10 +127,10 @@ const Calculator = ({ data }) => {
           <>
             <GridList cellHeight={300} spacing={10} cols={3}>
               <GridListTile cols={1}>
-                <StatPanel title="Flower" defaultData={flowerStats} onData={setFlowerStats}/>
+                <StatPanel title="Flower" defaultData={flowerStats} onData={setFlowerStats} requiredStats={["hp"]}/>
               </GridListTile>
               <GridListTile cols={1}>
-                <StatPanel title="Feather" defaultData={featherStats} onData={setFeatherStats}/>
+                <StatPanel title="Feather" defaultData={featherStats} onData={setFeatherStats} requiredStats={["atk"]}/>
               </GridListTile>
               <GridListTile cols={1}>
                 <StatPanel title="Timepiece" defaultData={timepieceStats} onData={setTimepieceStats}/>
