@@ -13,7 +13,7 @@ import Welcome from "./main/Welcome";
 import "./App.css";
 
 const App = () => {
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [saveData, setSaveData] = useState({});
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 

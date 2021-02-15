@@ -45,13 +45,13 @@ const Welcome = ({ loadApp }) => {
         <Button variant="contained" color="primary" onClick={() => setIsPopupVisible(true)}>Load Save</Button>
         <Button variant="contained" onClick={loadApp}>Get Started</Button>
       </div>
-      <Dialog open={isPopupVisible}>
-        <DialogTitle id="save-data-title">Load Save Data</DialogTitle>
+      <Dialog fullWidth open={isPopupVisible}>
+        <DialogTitle id="saveDataTitle">Load Save Data</DialogTitle>
         <DialogContent>
           <DialogContentText>
             If you have save data from previously using the app, copy-paste it below.
           </DialogContentText>
-          <TextField autoFocus fullWidth multiline id="save-data" label="Save Data" margin="dense"
+          <TextField autoFocus fullWidth multiline id="saveData" label="Save Data" margin="dense"
                      onChange={e => setSaveDataText(e.target.value)} onKeyDown={submitOnEnter}/>
           {error && <DialogContentText color="error">{error}</DialogContentText>}
         </DialogContent>
