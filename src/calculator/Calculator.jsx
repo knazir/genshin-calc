@@ -10,6 +10,7 @@ import {
 
 import ArtifactUtils from "../utils/ArtifactUtils";
 import CharacterInfo from "./CharacterInfo";
+import EnemyInfo from "./EnemyInfo";
 import SkillInfo from "./SkillInfo";
 import StatPanel from "./StatPanel";
 import "./Calculator.css";
@@ -22,6 +23,12 @@ const Calculator = ({ data }) => {
   const [character, setCharacter] = useState(data.character || {
     level: 0,
     weaponType: "",
+  });
+  const [enemy, setEnemy] = useState(data.enemy || {
+    level: 83,
+    elementalRes: 10,
+    elementalResReduction: 0,
+    defenseReduction: 0
   });
   const [skill, setSkill] = useState(data.skill || {
     damage: 0,
@@ -62,7 +69,7 @@ const Calculator = ({ data }) => {
     setTab(value);
   };
 
-  // TODO: Break this up into separate components and get the EnemyInfo component done
+  // TODO: Break this up into separate components
   return (
     <div className="calculator">
       <header>
@@ -89,7 +96,7 @@ const Calculator = ({ data }) => {
                 <CharacterInfo defaultData={character} onData={setCharacter}/>
               </GridListTile>
               <GridListTile cols={1}>
-                <StatPanel readOnly title="Enemy Info"/>
+                <EnemyInfo defaultData={enemy} onData={setEnemy}/>
               </GridListTile>
               <GridListTile cols={1}>
                 <SkillInfo defaultData={skill} onData={setSkill}/>

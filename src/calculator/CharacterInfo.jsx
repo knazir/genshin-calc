@@ -11,7 +11,6 @@ import {
 
 import StringUtils from "../utils/StringUtils";
 import weapons from "../data/weapons";
-import "./CharacterInfo.css";
 
 const CharacterInfo = ({ defaultData, onData }) => {
   // State
@@ -37,7 +36,7 @@ const CharacterInfo = ({ defaultData, onData }) => {
   });
 
   return (
-    <Paper className="characterInfo formPanel">
+    <Paper className="formPanel">
       <Typography variant="h5">Character Info</Typography>
       <TextField id="characterLevel" label="Level" type="number" value={level} onChange={onLevel}/>
       <FormControl>

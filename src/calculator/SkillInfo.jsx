@@ -13,7 +13,6 @@ import {
 
 import StringUtils from "../utils/StringUtils";
 import elements from "../data/elements";
-import "./SkillInfo.css";
 
 const SkillInfo = ({ defaultData, onData }) => {
   // State
@@ -54,7 +53,7 @@ const SkillInfo = ({ defaultData, onData }) => {
                                                     onChange={onDoesApplyElementalBonus}/>;
 
   return (
-    <Paper className="skillInfo formPanel">
+    <Paper className="formPanel">
       <Typography variant="h5">Skill Info</Typography>
       <TextField id="skillDamage" label="Damage (%)" type="number" value={damage} onChange={onDamage}/>
       <TextField id="skillDamage" label="Bonus Damage (%)" type="number" value={bonusDamage} onChange={onBonusDamage}/>
