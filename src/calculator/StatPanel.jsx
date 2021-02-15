@@ -20,13 +20,18 @@ import "./StatPanel.css";
 const StatPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }) => {
   // State
   let defaultAppliedStats = [];
-  if (defaultData) {
-    defaultAppliedStats = Object.entries(defaultData).map(([type, value]) => { return { type, value }; });
-  }
   requiredStats.forEach(requiredStatType => {
     const existingIndex = defaultAppliedStats.findIndex(({ type }) => type === requiredStatType);
-    if (existingIndex === -1) defaultAppliedStats.push({ type: requiredStatType, value: 0 });
+    const defaultValue = defaultData[requiredStatType] != null ? defaultData[requiredStatType] : 0;
+    if (existingIndex === -1) defaultAppliedStats.push({ type: requiredStatType, value: defaultValue });
   });
+  if (defaultData) {
+    defaultAppliedStats = [
+      ...defaultAppliedStats,
+      ...Object.entries(defaultData).filter(([type, _]) => requiredStats.indexOf(type) === -1)
+                                    .map(([type, value]) => { return { type, value }; })
+    ];
+  }
   const [appliedStats, setAppliedStats] = useState(defaultAppliedStats);
   const [newStatType, setNewStatType] = useState("");
 
