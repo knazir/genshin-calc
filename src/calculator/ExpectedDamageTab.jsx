@@ -63,7 +63,7 @@ const ExpectedDamageTab = ({ character, enemy, skill, finalStats, defaultErBonus
     return (
       <TableRow key={type}>
         <TableCell component="th" scope="row">{embonus.names[type]}</TableCell>
-        <TableCell>{reactionMult * 100}</TableCell>
+        <TableCell>{reactionMult}</TableCell>
         <TableCell>{elementalMasteryMult}</TableCell>
         <TableCell>
           <TextField id="erBonus" type="number" value={erBonuses[type]} onChange={e => onErBonus(e, type)}/>
