@@ -81,7 +81,7 @@ const StatsPanel = ({ defaultData, data, onData, readOnly, requiredStats = [], t
 
   // DOM Elements
   const statsToUse = readOnly ? statsListFromObj(data) : appliedStats;
-  const statInputs = statsToUse.map(({ type, value }) => {
+  const statInputs = statsToUse.filter(({ type, value }) => value != null).map(({ type, value }) => {
     const name = stats[type];
     const canDeleteStat = requiredStats.indexOf(type) === -1;
     const inputProps = { style: { textAlign: "right" } };

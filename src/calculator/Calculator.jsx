@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Tabs,
@@ -39,6 +39,9 @@ const Calculator = ({ data }) => {
     doesApplyElementalBonus: true
   });
   const [characterStats, setCharacterStats] = useState(data.characterStats || {
+    atk: 0,
+    def: 0,
+    hp: 0,
     critRate: 5,
     critDamage: 50,
     energyRecharge: 100
@@ -56,11 +59,21 @@ const Calculator = ({ data }) => {
   const [hatStats, setHatStats] = useState(data.hatStats || {});
   const [miscStats, setMiscStats] = useState(data.miscStats || {});
   const [specialStats, setSpecialStats] = useState(data.specialStats || []);
+  const [baseStats, setBaseStats] = useState({});
+  const [artifactsStats, setArtifactsStats] = useState({});
+  const [finalStats, setFinalStats] = useState({});
 
-  // Aggregates
-  const baseStats = ArtifactUtils.addStats(characterStats, weaponStats);
-  const artifactsStats = ArtifactUtils.addStats(setEffectsStats, flowerStats, featherStats, timepieceStats, gobletStats,
-                                                hatStats);
+  // Effects
+  useEffect(() => {
+    setBaseStats(ArtifactUtils.addStats(characterStats, weaponStats));
+    setArtifactsStats(ArtifactUtils.addStats(flowerStats, featherStats, timepieceStats, gobletStats, hatStats,
+                                             setEffectsStats));
+    setFinalStats(ArtifactUtils.getFinalStats(characterStats, weaponStats, baseStats, artifactsStats, miscStats,
+                                              specialStats));
+  }, [
+    characterStats, weaponStats, flowerStats, featherStats, timepieceStats, gobletStats, hatStats, setEffectsStats,
+    miscStats, specialStats
+  ]);
 
   // Event Handlers
   const onSave = () => {
@@ -88,7 +101,7 @@ const Calculator = ({ data }) => {
                   onSetEffectsStats={setSetEffectsStats}/>,
     <BonusStatsTab key="bonusStats" miscStats={miscStats} onMiscStats={setMiscStats} specialStats={specialStats}
                    onSpecialStats={setSpecialStats}/>,
-    <TotalsTab key="totals" baseStats={baseStats} artifactsStats={artifactsStats}/>,
+    <TotalsTab key="totals" baseStats={baseStats} artifactsStats={artifactsStats} finalStats={finalStats}/>,
   ];
 
   return (
