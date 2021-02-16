@@ -6,7 +6,7 @@ import StatsPanel from "./StatsPanel";
 const ArtifactsTab = ({ flowerStats, onFlowerStats, featherStats, onFeatherStats, timepieceStats, onTimepieceStats,
                         gobletStats, onGobletStats, hatStats, onHatStats, setEffectsStats, onSetEffectsStats }) => {
   return (
-    <GridList cellHeight={300} spacing={10} cols={3}>
+    <GridList cellHeight={400} spacing={10} cols={3}>
       <GridListTile cols={1}>
         <StatsPanel title="Flower" defaultData={flowerStats} onData={onFlowerStats} requiredStats={["hp"]}/>
       </GridListTile>

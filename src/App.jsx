@@ -18,7 +18,7 @@ import Alert from "@material-ui/lab/Alert";
 
 const App = () => {
   // State
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [saveData, setSaveData] = useState({});
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");

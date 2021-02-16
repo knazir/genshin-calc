@@ -9,12 +9,14 @@ import {
 import ArtifactUtils from "../utils/ArtifactUtils";
 import ArtifactsTab from "./ArtifactsTab";
 import BaseStatsTab from "./BaseStatsTab";
-import DamageTab from "./DamageTab";
+import BonusStatsTab from "./BonusStatsTab";
+import DamageInfoTab from "./DamageInfoTab";
+import ExpectedDamageTab from "./ExpectedDamageTab";
+import SaveDialog from "../main/SaveDialog";
 import TotalsTab from "./TotalsTab";
 
 import "./Calculator.css";
-import SaveDialog from "../main/SaveDialog";
-import BonusStatsTab from "./BonusStatsTab";
+import DamageUtils from "../utils/DamageUtils";
 
 const Calculator = ({ data }) => {
   // State
@@ -59,6 +61,7 @@ const Calculator = ({ data }) => {
   const [hatStats, setHatStats] = useState(data.hatStats || {});
   const [miscStats, setMiscStats] = useState(data.miscStats || {});
   const [specialStats, setSpecialStats] = useState(data.specialStats || []);
+  const [erBonuses, setErBonuses] = useState(data.erBonuses || DamageUtils.getDefaultErBonuses());
   const [baseStats, setBaseStats] = useState({});
   const [artifactsStats, setArtifactsStats] = useState({});
   const [finalStats, setFinalStats] = useState({});
@@ -81,7 +84,7 @@ const Calculator = ({ data }) => {
   const onSave = () => {
     const saveData = {
       character, skill, characterStats, weaponStats, setEffectsStats, flowerStats, featherStats,
-      timepieceStats, gobletStats, hatStats, miscStats, specialStats
+      timepieceStats, gobletStats, hatStats, miscStats, specialStats, erBonuses
     };
     setSaveData(saveData);
     setIsSavePopupVisible(true);
@@ -92,8 +95,8 @@ const Calculator = ({ data }) => {
 
   // DOM Nodes
   const tabs = [
-    <DamageTab key="damage" character={character} onCharacter={setCharacter} enemy={enemy} onEnemy={setEnemy}
-               skill={skill} onSkill={setSkill} elementalBonus={finalStats.elementalBonus}/>,
+    <DamageInfoTab key="damage" character={character} onCharacter={setCharacter} enemy={enemy} onEnemy={setEnemy}
+                   skill={skill} onSkill={setSkill} elementalBonus={finalStats.elementalBonus}/>,
     <BaseStatsTab key="baseStats" characterStats={characterStats} onCharacterStats={setCharacterStats}
                   weaponStats={weaponStats} onWeaponStats={setWeaponStats}/>,
     <ArtifactsTab key="artifacts" flowerStats={flowerStats} onFlowerStats={setFlowerStats} featherStats={featherStats}
@@ -104,6 +107,8 @@ const Calculator = ({ data }) => {
     <BonusStatsTab key="bonusStats" miscStats={miscStats} onMiscStats={setMiscStats} specialStats={specialStats}
                    onSpecialStats={setSpecialStats}/>,
     <TotalsTab key="totals" baseStats={baseStats} artifactsStats={artifactsStats} finalStats={finalStats}/>,
+    <ExpectedDamageTab character={character} enemy={enemy} skill={skill} finalStats={finalStats}
+                       defaultErBonuses={erBonuses} onErBonuses={setErBonuses}/>
   ];
 
   return (

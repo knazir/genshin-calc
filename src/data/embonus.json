@@ -1,17 +1,21 @@
 {
   "names": {
+    "electroCharge": "Electro-Charge",
+    "melt": "Melt",
+    "overload": "Overload",
+    "shatter": "Shatter",
     "superconduct": "Superconduct",
     "swirl": "Swirl",
-    "electroCharge": "Electro-Charge",
-    "shatter": "Shatter",
-    "overload": "Overload"
+    "vaporize": "Vaporize"
   },
   "multipliers": {
+    "electroCharge": 2.4,
+    "melt": 0,
+    "overload": 4.0,
+    "shatter": 3.0,
     "superconduct": 1.0,
     "swirl": 1.2,
-    "electroCharge": 2.4,
-    "shatter": 3.0,
-    "overload": 4.0
+    "vaporize": 0
   },
   "superconduct": [
     8, 9, 9, 10, 11, 12, 12, 13, 16, 17, 18, 20, 22, 23, 27, 29, 31, 34, 37, 40, 42, 46, 48, 51, 53, 56, 59, 61, 64, 68,

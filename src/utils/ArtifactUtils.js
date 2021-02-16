@@ -10,7 +10,7 @@ export default class ArtifactUtils {
         totalStats[statType] = totalStats[statType] == null ? statValue : totalStats[statType] + statValue;
       });
     });
-    return totalStats;
+    return this._roundStats(totalStats);
   }
 
   static getFinalStats(characterStats, weaponStats, baseStats, artifactsStats, miscStats, specialStats) {
@@ -44,22 +44,7 @@ export default class ArtifactUtils {
     finalStats.healingBonus = this._sumStats("healingBonus", baseStats, artifactsStats, miscStats);
     finalStats.elementalBonus = this._sumStats("elementalBonus", baseStats, artifactsStats, miscStats);
 
-    const roundToMap = {
-      atk: 0,
-      def: 0,
-      hp: 0,
-      critRate: 1,
-      critDamage: 1,
-      elementalMastery: 0,
-      energyRecharge: 0,
-      healingBonus: 1,
-      elementalBonus: 1
-    };
-    Object.entries(roundToMap).forEach(([stat, decimalPlaces]) => {
-      finalStats[stat] = MathUtils.roundToDecimals(finalStats[stat], decimalPlaces);
-    });
-
-    return finalStats;
+    return this._roundStats(finalStats);
   }
 
   static _sumStats(type, ...stats) {
@@ -75,5 +60,25 @@ export default class ArtifactUtils {
       else filledStats[stat] = statCollection[stat];
     });
     return filledStats;
+  }
+
+  static _roundStats(statCollection) {
+    const roundedStats = {};
+    const roundToMap = {
+      atk: 0,
+      def: 0,
+      hp: 0,
+      critRate: 1,
+      critDamage: 1,
+      elementalMastery: 0,
+      energyRecharge: 1,
+      healingBonus: 1,
+      elementalBonus: 1
+    };
+    Object.entries(statCollection).forEach(([stat, value]) => {
+      const decimalPlaces = roundToMap[stat];
+      roundedStats[stat] = MathUtils.roundToDecimals(value, decimalPlaces);
+    });
+    return roundedStats;
   }
 }
