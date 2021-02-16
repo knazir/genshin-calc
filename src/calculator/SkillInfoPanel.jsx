@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Checkbox,
+  Divider,
   FormControl,
   FormControlLabel,
   InputLabel,
@@ -11,21 +12,27 @@ import {
   Typography,
 } from "@material-ui/core";
 
+import DamageUtils from "../utils/DamageUtils";
 import StringUtils from "../utils/StringUtils";
 import elements from "../data/elements";
 
-const SkillInfoPanel = ({ defaultData, onData }) => {
+const SkillInfoPanel = ({ defaultData, onData, elementalBonus }) => {
   // State
   const [damage, setDamage] = useState(defaultData.damage);
   const [bonusDamage, setBonusDamage] = useState(defaultData.bonusDamage);
   const [element, setElement] = useState(defaultData.element);
   const [doesShatter, setDoesShatter] = useState(defaultData.doesShatter);
   const [doesApplyElementalBonus, setDoesApplyElementalBonus] = useState(defaultData.doesApplyElementalBonus);
+  const [totalDamage, setTotalDamage] = useState(DamageUtils.getTotalSkillDamage(damage, bonusDamage, elementalBonus,
+                                                                                 doesApplyElementalBonus));
 
   // Effects
   useEffect(() => {
-    onData({ damage, bonusDamage, element, doesShatter, doesApplyElementalBonus });
-  }, [damage, bonusDamage, element, doesShatter, doesApplyElementalBonus]);
+   setTotalDamage(DamageUtils.getTotalSkillDamage(damage, bonusDamage, elementalBonus, doesApplyElementalBonus));
+  }, [damage, bonusDamage, elementalBonus, doesApplyElementalBonus]);
+  useEffect(() => {
+    onData({ damage, bonusDamage, element, doesShatter, doesApplyElementalBonus, totalDamage });
+  }, [damage, bonusDamage, element, doesShatter, doesApplyElementalBonus, totalDamage]);
 
   // Event Handlers
   const onDamage = e => {
@@ -56,7 +63,7 @@ const SkillInfoPanel = ({ defaultData, onData }) => {
     <Paper className="formPanel">
       <Typography variant="h5">Skill Info</Typography>
       <TextField id="skillDamage" label="Damage (%)" type="number" value={damage} onChange={onDamage}/>
-      <TextField id="skillDamage" label="Bonus Damage (%)" type="number" value={bonusDamage} onChange={onBonusDamage}/>
+      <TextField id="bonusDamage" label="Bonus Damage (%)" type="number" value={bonusDamage} onChange={onBonusDamage}/>
       <FormControl>
         <InputLabel id="elementLabel">Element</InputLabel>
         <Select id="element" labelId="elementLabel" value={element} onChange={onElement}>
@@ -65,6 +72,8 @@ const SkillInfoPanel = ({ defaultData, onData }) => {
       </FormControl>
       <FormControlLabel control={doesShatterCheckbox} label="Damage Shatters"/>
       <FormControlLabel control={doesApplyElementalBonusCheckbox} label="Apply Elemental Bonus"/>
+      <Divider className="panelDivider"/>
+      <TextField readOnly disabled id="totalDamage" label="Total Damage (%)" type="number" value={totalDamage}/>
     </Paper>
   );
 };

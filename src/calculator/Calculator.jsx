@@ -92,8 +92,8 @@ const Calculator = ({ data }) => {
 
   // DOM Nodes
   const tabs = [
-    <DamageTab  key="damage" character={character} onCharacter={setCharacter} enemy={enemy} onEnemy={setEnemy}
-                skill={skill} onSkill={setSkill}/>,
+    <DamageTab key="damage" character={character} onCharacter={setCharacter} enemy={enemy} onEnemy={setEnemy}
+               skill={skill} onSkill={setSkill} elementalBonus={finalStats.elementalBonus}/>,
     <BaseStatsTab key="baseStats" characterStats={characterStats} onCharacterStats={setCharacterStats}
                   weaponStats={weaponStats} onWeaponStats={setWeaponStats}/>,
     <ArtifactsTab key="artifacts" flowerStats={flowerStats} onFlowerStats={setFlowerStats} featherStats={featherStats}

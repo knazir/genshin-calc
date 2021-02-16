@@ -1,8 +1,10 @@
+import MathUtils from "./MathUtils";
+
 import embonus from "../data/embonus";
 
 export default class DamageUtils {
   static getEnemyDefense(enemyLevel) {
-    return this._roundToDecimals(5 * enemyLevel + 500, 0);
+    return MathUtils.roundToDecimals(5 * enemyLevel + 500, 0);
   }
 
   static getEnemyDefenseMultiplier(characterLevel, enemyLevel, defenseReduction) {
@@ -12,7 +14,7 @@ export default class DamageUtils {
     } else {
       result = (characterLevel + 100) / ((1 - (defenseReduction / 100)) * (enemyLevel + 100) + characterLevel + 100);
     }
-    return this._roundToDecimals(result, 2);
+    return MathUtils.roundToDecimals(result, 2);
   }
 
   static getEnemyResistanceMultiplier(elementalRes, elementalResReduction) {
@@ -25,14 +27,12 @@ export default class DamageUtils {
     } else {
       result = 1 / ((4 * netElementalRes / 100) + 1);
     }
-    return this._roundToDecimals(result, 2);
+    return MathUtils.roundToDecimals(result, 2);
   }
 
-  static _roundToDecimals(value, decimalPlaces) {
-    let multiplier = 1;
-    for (let i = 0; i < decimalPlaces; i++) {
-      multiplier *= 10;
-    }
-    return Math.round(value * multiplier) / multiplier;
+  static getTotalSkillDamage(skillDamage, bonusDamage, elementalBonus, applyElementalBonus) {
+    const percentIncrease = bonusDamage + applyElementalBonus ? elementalBonus : 0;
+    const result = MathUtils.percentIncrease(skillDamage, percentIncrease);
+    return MathUtils.roundToDecimals(result, 0);
   }
 }

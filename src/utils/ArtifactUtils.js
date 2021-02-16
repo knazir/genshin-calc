@@ -1,3 +1,5 @@
+import MathUtils from "./MathUtils";
+
 import stats from "../data/stats";
 
 export default class ArtifactUtils {
@@ -21,17 +23,17 @@ export default class ArtifactUtils {
 
     // ATK
     const atkPercent = this._sumStats("atkPercent", baseStats, artifactsStats, miscStats);
-    const scaledAtk = this._percentIncrease(baseStats.atk, atkPercent);
+    const scaledAtk = MathUtils.percentIncrease(baseStats.atk, atkPercent);
     finalStats.atk = Math.ceil(scaledAtk + artifactsStats.atk + miscStats.atk);
 
     // DEF
     const defPercent = this._sumStats("defPercent", baseStats, artifactsStats, miscStats);
-    const scaledDef = this._percentIncrease(characterStats.def, defPercent);
+    const scaledDef = MathUtils.percentIncrease(characterStats.def, defPercent);
     finalStats.def = Math.ceil(scaledDef + weaponStats.def + artifactsStats.def + miscStats.def);
 
     // HP
     const hpPercent = this._sumStats("hpPercent", baseStats, artifactsStats, miscStats);
-    const scaledHp = this._percentIncrease(characterStats.hp, hpPercent);
+    const scaledHp = MathUtils.percentIncrease(characterStats.hp, hpPercent);
     finalStats.hp = Math.ceil(scaledHp + weaponStats.hp + artifactsStats.hp + miscStats.hp);
 
     // Simple-Summed Stats
@@ -42,6 +44,21 @@ export default class ArtifactUtils {
     finalStats.healingBonus = this._sumStats("healingBonus", baseStats, artifactsStats, miscStats);
     finalStats.elementalBonus = this._sumStats("elementalBonus", baseStats, artifactsStats, miscStats);
 
+    const roundToMap = {
+      atk: 0,
+      def: 0,
+      hp: 0,
+      critRate: 1,
+      critDamage: 1,
+      elementalMastery: 0,
+      energyRecharge: 0,
+      healingBonus: 1,
+      elementalBonus: 1
+    };
+    Object.entries(roundToMap).forEach(([stat, decimalPlaces]) => {
+      finalStats[stat] = MathUtils.roundToDecimals(finalStats[stat], decimalPlaces);
+    });
+
     return finalStats;
   }
 
@@ -49,10 +66,6 @@ export default class ArtifactUtils {
     let total = 0;
     stats.filter(statCollection => statCollection[type]).forEach(statCollection => total += statCollection[type]);
     return total;
-  }
-
-  static _percentIncrease(value, percentage) {
-    return value * (1 + (percentage / 100));
   }
 
   static _filledStats(statCollection) {

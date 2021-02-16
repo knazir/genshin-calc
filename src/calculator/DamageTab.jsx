@@ -5,7 +5,7 @@ import CharacterInfoPanel from "./CharacterInfoPanel";
 import EnemyInfoPanel from "./EnemyInfoPanel";
 import SkillInfoPanel from "./SkillInfoPanel";
 
-const DamageTab = ({ character, onCharacter, enemy, onEnemy, skill, onSkill }) => {
+const DamageTab = ({ character, onCharacter, enemy, onEnemy, skill, onSkill, elementalBonus }) => {
   return (
     <GridList cellHeight={500} spacing={10} cols={3}>
       <GridListTile cols={1}>
@@ -15,7 +15,7 @@ const DamageTab = ({ character, onCharacter, enemy, onEnemy, skill, onSkill }) =
         <EnemyInfoPanel defaultData={enemy} onData={onEnemy} character={character}/>
       </GridListTile>
       <GridListTile cols={1}>
-        <SkillInfoPanel defaultData={skill} onData={onSkill}/>
+        <SkillInfoPanel defaultData={skill} onData={onSkill} elementalBonus={elementalBonus}/>
       </GridListTile>
     </GridList>
   );
