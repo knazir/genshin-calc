@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Paper, Typography} from "@material-ui/core";
 
-import ReactUtils from "../utils/ReactUtils";
-
 import SpecialStatForm from "./SpecialStatForm";
 
 const SpecialStatsPanel = ({ defaultSpecialStats, onSpecialStats }) => {
@@ -41,7 +39,7 @@ const SpecialStatsPanel = ({ defaultSpecialStats, onSpecialStats }) => {
 
   return (
     <Paper className="formPanel">
-      <Typography variant="h5">Special Stats</Typography>
+      <Typography variant="h5">Special Stats (Coming Soon)</Typography>
       <div className="appliedStats appliedSpecialStats">
         {statForms}
       </div>
