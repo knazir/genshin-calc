@@ -20,7 +20,13 @@ import stats from "../data/stats";
 
 import "./StatsPanel.css";
 
-const StatsPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }) => {
+const StatsPanel = ({ defaultData, data, onData, readOnly, requiredStats = [], title }) => {
+  // Helpers
+  const statsListFromObj = statsObj => {
+    return Object.entries(statsObj).filter(([type, _]) => requiredStats.indexOf(type) === -1)
+                                   .map(([type, value]) => { return { type, value }; })
+  };
+
   // State
   let defaultAppliedStats = [];
   requiredStats.forEach(requiredStatType => {
@@ -31,8 +37,7 @@ const StatsPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }
   if (defaultData) {
     defaultAppliedStats = [
       ...defaultAppliedStats,
-      ...Object.entries(defaultData).filter(([type, _]) => requiredStats.indexOf(type) === -1)
-                                    .map(([type, value]) => { return { type, value }; })
+      ...statsListFromObj(defaultData)
     ];
   }
   const [appliedStats, setAppliedStats] = useState(defaultAppliedStats);
@@ -43,7 +48,7 @@ const StatsPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }
     const statsObj = {};
     appliedStats.forEach(({ type, value }) => statsObj[type] = value);
     if (onData) onData(statsObj);
-  }, [appliedStats]);
+  }, [appliedStats, data]);
 
   // Event Handlers
   const onStatChange = (e, typeToUpdate) => {
@@ -75,20 +80,23 @@ const StatsPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }
   };
 
   // DOM Elements
-  const statInputs = appliedStats.map(({ type, value }) => {
+  const statsToUse = readOnly ? statsListFromObj(data) : appliedStats;
+  const statInputs = statsToUse.map(({ type, value }) => {
     const name = stats[type];
     const canDeleteStat = requiredStats.indexOf(type) === -1;
     const inputProps = { style: { textAlign: "right" } };
+    const typographyProps = readOnly ? { variant: "h6" } : {};
     return (
       <FormGroup key={type} row className="statRow">
-        <IconButton aria-label="delete" disabled={!canDeleteStat}
-                    onClick={() => onStatDelete(type)}><DeleteIcon/></IconButton>
-        <Typography className="statLabel">{name}</Typography>
         {
-          readOnly
-            ? <Typography>{value}</Typography>
-            :  <TextField id={`${type}Input`} className="statInput" type="number" inputProps={inputProps} value={value}
-                                                             onChange={e => onStatChange(e, type)}/>
+          !readOnly &&
+          <IconButton aria-label="delete" disabled={!canDeleteStat}
+                      onClick={() => onStatDelete(type)}><DeleteIcon/></IconButton>
+        }
+        <Typography className="statLabel" {...typographyProps}>{name}</Typography>
+        {
+            <TextField id={`${type}Input`} className="statInput" type="number" inputProps={inputProps} value={value}
+                       readOnly={readOnly} disabled={readOnly} onChange={e => onStatChange(e, type)}/>
         }
       </FormGroup>
     );
@@ -100,7 +108,7 @@ const StatsPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }
   });
 
   return (
-    <Paper className="statPanel formPanel">
+    <Paper className={`statPanel formPanel ${readOnly ? "readOnly" : ""}`}>
       <Typography variant="h5">{title}</Typography>
       <div className="appliedStats">
         {statInputs}

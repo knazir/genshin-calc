@@ -19,15 +19,6 @@ import stats from "../data/stats";
 import "./SpecialStatsForm.css";
 
 const SpecialStatForm = ({ defaultSpecialStat = {}, isCreationForm, onAdd, onDelete, onUpdate }) => {
-  // State
-  const [finalStatType, setFinalStatType] = useState(defaultSpecialStat.finalStatType || "");
-  const [percentChange, setPercentChange] = useState(defaultSpecialStat.percentChange || "");
-  const [statGroup, setStatGroup] = useState(defaultSpecialStat.statGroup || "");
-  const [statGroupType, setStatGroupType] = useState(defaultSpecialStat.statGroupType || "");
-  let defaultUniqueId = defaultSpecialStat.uniqueId;
-  if (defaultUniqueId == null || isCreationForm) defaultUniqueId = -1;
-  const [uniqueId, setUniqueId] = useState(defaultUniqueId);
-
   // Helpers
   const isValid = () => {
     return [finalStatType, percentChange, statGroup, statGroupType].indexOf("") === -1;
@@ -37,6 +28,15 @@ const SpecialStatForm = ({ defaultSpecialStat = {}, isCreationForm, onAdd, onDel
     if (useNewUniqueId) actualUniqueId = ReactUtils.nextUniqueId("specialStat");
     return { uniqueId: actualUniqueId, finalStatType, percentChange, statGroup, statGroupType };
   };
+
+  // State
+  const [finalStatType, setFinalStatType] = useState(defaultSpecialStat.finalStatType || "");
+  const [percentChange, setPercentChange] = useState(defaultSpecialStat.percentChange || "");
+  const [statGroup, setStatGroup] = useState(defaultSpecialStat.statGroup || "");
+  const [statGroupType, setStatGroupType] = useState(defaultSpecialStat.statGroupType || "");
+  let defaultUniqueId = defaultSpecialStat.uniqueId;
+  if (defaultUniqueId == null || isCreationForm) defaultUniqueId = -1;
+  const [uniqueId, setUniqueId] = useState(defaultUniqueId);
 
   // Effects
   useEffect(() => {

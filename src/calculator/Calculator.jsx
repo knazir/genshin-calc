@@ -91,7 +91,6 @@ const Calculator = ({ data }) => {
     <TotalsTab key="totals" baseStats={baseStats} artifactsStats={artifactsStats}/>,
   ];
 
-  // TODO: Break this up into separate components and create a "increase x by y percentage of z" component
   return (
     <div className="calculator">
       <header>

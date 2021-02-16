@@ -5,7 +5,7 @@ import StatsPanel from "./StatsPanel";
 
 const TotalsTab = ({ baseStats, artifactsStats }) => {
   return (
-    <GridList cellHeight={300} spacing={10} cols={3}>
+    <GridList cellHeight={500} spacing={10} cols={3}>
       <GridListTile cols={1}>
         <StatsPanel readOnly title="Base Stat Totals" data={baseStats}/>
       </GridListTile>
