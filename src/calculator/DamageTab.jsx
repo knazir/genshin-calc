@@ -1,21 +1,21 @@
 import React from "react";
 import { GridList, GridListTile } from "@material-ui/core";
 
-import CharacterInfo from "./CharacterInfo";
-import EnemyInfo from "./EnemyInfo";
-import SkillInfo from "./SkillInfo";
+import CharacterInfoPanel from "./CharacterInfoPanel";
+import EnemyInfoPanel from "./EnemyInfoPanel";
+import SkillInfoPanel from "./SkillInfoPanel";
 
 const DamageTab = ({ character, onCharacter, enemy, onEnemy, skill, onSkill }) => {
   return (
     <GridList cellHeight={375} spacing={10} cols={3}>
       <GridListTile cols={1}>
-        <CharacterInfo defaultData={character} onData={onCharacter}/>
+        <CharacterInfoPanel defaultData={character} onData={onCharacter}/>
       </GridListTile>
       <GridListTile cols={1}>
-        <EnemyInfo defaultData={enemy} onData={onEnemy}/>
+        <EnemyInfoPanel defaultData={enemy} onData={onEnemy}/>
       </GridListTile>
       <GridListTile cols={1}>
-        <SkillInfo defaultData={skill} onData={onSkill}/>
+        <SkillInfoPanel defaultData={skill} onData={onSkill}/>
       </GridListTile>
     </GridList>
   );

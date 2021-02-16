@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import {
   Button,
   Dialog,
@@ -6,15 +6,14 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Snackbar,
   TextField
 } from "@material-ui/core";
 import CopyIcon from "@material-ui/icons/AssignmentReturned";
-import Alert from "@material-ui/lab/Alert";
+
+import ReactUtils from "../utils/ReactUtils";
 
 const SaveDialog = ({ open, setOpen, saveData }) => {
   // State
-  const [isCopiedAlertOpen, setIsCopiedAlertOpen] = useState(false);
   const saveDataText = JSON.stringify(saveData, null, 2);
 
   // Event Handlers
@@ -22,14 +21,7 @@ const SaveDialog = ({ open, setOpen, saveData }) => {
     saveDataTextareaRef.current.select();
     document.execCommand("copy");
     e.target.focus();
-    setIsCopiedAlertOpen(true);
-  };
-  const onClose = () => {
-    setIsCopiedAlertOpen(false);
-    setOpen(false);
-  };
-  const onCopiedAlertClose = () => {
-    setIsCopiedAlertOpen(false);
+    ReactUtils.onSuccess("Successfully copied data to clipboard!");
   };
 
   // DOM Elements
@@ -38,7 +30,7 @@ const SaveDialog = ({ open, setOpen, saveData }) => {
   if (!open) return null;
   return (
     <>
-      <Dialog fullWidth open={open} onClose={onClose}>
+      <Dialog fullWidth open={open} onClose={() => setOpen(false)}>
         <DialogTitle id="saveDataTitle">Save Data</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -50,14 +42,9 @@ const SaveDialog = ({ open, setOpen, saveData }) => {
         </DialogContent>
         <DialogActions>
           <Button variant="contained" startIcon={<CopyIcon/>} onClick={onCopyToClipboard}>Copy to Clipboard</Button>
-          <Button variant="contained" onClick={onClose}>Ok</Button>
+          <Button variant="contained" onClick={() => setOpen(false)}>Ok</Button>
         </DialogActions>
       </Dialog>
-      <Snackbar open={isCopiedAlertOpen} autoHideDuration={3000} onClose={onCopiedAlertClose}>
-        <Alert onClose={onCopiedAlertClose} severity="success">
-          Successfully copied data to clipboard!
-        </Alert>
-      </Snackbar>
     </>
   );
 };

@@ -14,11 +14,13 @@ import {
 import AddIcon from "@material-ui/icons/Add";
 import DeleteIcon from "@material-ui/icons/Delete";
 
+import ReactUtils from "../utils/ReactUtils";
+
 import stats from "../data/stats";
 
-import "./StatPanel.css";
+import "./StatsPanel.css";
 
-const StatPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }) => {
+const StatsPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }) => {
   // State
   let defaultAppliedStats = [];
   requiredStats.forEach(requiredStatType => {
@@ -41,7 +43,7 @@ const StatPanel = ({ defaultData, onData, readOnly, requiredStats = [], title })
     const statsObj = {};
     appliedStats.forEach(({ type, value }) => statsObj[type] = value);
     if (onData) onData(statsObj);
-  }, [appliedStats, onData]);
+  }, [appliedStats]);
 
   // Event Handlers
   const onStatChange = (e, typeToUpdate) => {
@@ -64,7 +66,11 @@ const StatPanel = ({ defaultData, onData, readOnly, requiredStats = [], title })
     setNewStatType(e.target.value);
   };
   const onNewStatTypeAdd = () => {
-    if (!newStatType || appliedStats.find(({ type }) => type === newStatType) != null) return;
+    if (!newStatType) {
+      return ReactUtils.onError("Please select a stat type to add.");
+    } else if (appliedStats.find(({ type }) => type === newStatType) != null) {
+      return ReactUtils.onError("Stat type already exists.");
+    }
     setAppliedStats([...appliedStats, { type: newStatType, value: 0 }]);
   };
 
@@ -102,17 +108,19 @@ const StatPanel = ({ defaultData, onData, readOnly, requiredStats = [], title })
       {
         !readOnly &&
         <FormGroup row className="newStatForm">
-          <FormControl className="newStatSelect">
+          <FormControl className="formSelect">
             <InputLabel id="newStatTypeLabel">New Stat</InputLabel>
             <Select id="newStatType" labelId="newStatTypeLabel" value={newStatType} onChange={onNewStatTypeSelect}>
               {statTypeItems}
             </Select>
           </FormControl>
-          <Button variant="contained" startIcon={<AddIcon/>} onClick={onNewStatTypeAdd}>Add</Button>
+          <Button variant="contained" startIcon={<AddIcon/>} onClick={onNewStatTypeAdd}>
+            Add
+          </Button>
         </FormGroup>
       }
     </Paper>
   );
 };
 
-export default StatPanel;
+export default StatsPanel;

@@ -14,7 +14,7 @@ import {
 import StringUtils from "../utils/StringUtils";
 import elements from "../data/elements";
 
-const SkillInfo = ({ defaultData, onData }) => {
+const SkillInfoPanel = ({ defaultData, onData }) => {
   // State
   const [damage, setDamage] = useState(defaultData.damage);
   const [bonusDamage, setBonusDamage] = useState(defaultData.bonusDamage);
@@ -25,7 +25,7 @@ const SkillInfo = ({ defaultData, onData }) => {
   // Effects
   useEffect(() => {
     onData({ damage, bonusDamage, element, doesShatter, doesApplyElementalBonus });
-  }, [damage, bonusDamage, element, doesShatter, doesApplyElementalBonus, onData]);
+  }, [damage, bonusDamage, element, doesShatter, doesApplyElementalBonus]);
 
   // Event Handlers
   const onDamage = e => {
@@ -45,7 +45,7 @@ const SkillInfo = ({ defaultData, onData }) => {
   };
 
   // DOM Elements
-  const elementItems = elements.elements.map(element => {
+  const elementItems = Object.keys(elements).map(element => {
     return <MenuItem key={element} value={element}>{StringUtils.capitalize(element)}</MenuItem>;
   });
   const doesShatterCheckbox = <Checkbox checked={doesShatter} onChange={onDoesShatter}/>;
@@ -69,4 +69,4 @@ const SkillInfo = ({ defaultData, onData }) => {
   );
 };
 
-export default SkillInfo;
+export default SkillInfoPanel;

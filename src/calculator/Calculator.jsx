@@ -14,6 +14,7 @@ import TotalsTab from "./TotalsTab";
 
 import "./Calculator.css";
 import SaveDialog from "../main/SaveDialog";
+import BonusStatsTab from "./BonusStatsTab";
 
 const Calculator = ({ data }) => {
   // State
@@ -54,6 +55,7 @@ const Calculator = ({ data }) => {
   const [gobletStats, setGobletStats] = useState(data.gobletStats || {});
   const [hatStats, setHatStats] = useState(data.hatStats || {});
   const [miscStats, setMiscStats] = useState(data.miscStats || {});
+  const [specialStats, setSpecialStats] = useState(data.specialStats || []);
 
   // Aggregates
   const baseStats = ArtifactUtils.addStats(characterStats, weaponStats);
@@ -64,7 +66,7 @@ const Calculator = ({ data }) => {
   const onSave = () => {
     const saveData = {
       character, skill, characterStats, weaponStats, setEffectsStats, flowerStats, featherStats,
-      timepieceStats, gobletStats, hatStats, miscStats
+      timepieceStats, gobletStats, hatStats, miscStats, specialStats
     };
     setSaveData(saveData);
     setIsSavePopupVisible(true);
@@ -72,6 +74,22 @@ const Calculator = ({ data }) => {
   const onTab = (e, value) => {
     setTab(value);
   };
+
+  // DOM Nodes
+  const tabs = [
+    <DamageTab  key="damage" character={character} onCharacter={setCharacter} enemy={enemy} onEnemy={setEnemy}
+                skill={skill} onSkill={setSkill}/>,
+    <BaseStatsTab key="baseStats" characterStats={characterStats} onCharacterStats={setCharacterStats}
+                  weaponStats={weaponStats} onWeaponStats={setWeaponStats}/>,
+    <ArtifactsTab key="artifacts" flowerStats={flowerStats} onFlowerStats={setFlowerStats} featherStats={featherStats}
+                  onFeatherStats={setFeatherStats} timepieceStats={timepieceStats}
+                  onTimepieceStats={setTimepieceStats} gobletStats={gobletStats} onGobletStats={setGobletStats}
+                  hatStats={hatStats} onHatStats={setHatStats} setEffectsStats={setEffectsStats}
+                  onSetEffectsStats={setSetEffectsStats}/>,
+    <BonusStatsTab key="bonusStats" miscStats={miscStats} onMiscStats={setMiscStats} specialStats={specialStats}
+                   onSpecialStats={setSpecialStats}/>,
+    <TotalsTab key="totals" baseStats={baseStats} artifactsStats={artifactsStats}/>,
+  ];
 
   // TODO: Break this up into separate components and create a "increase x by y percentage of z" component
   return (
@@ -87,38 +105,13 @@ const Calculator = ({ data }) => {
           <Tab label="Damage Info"/>
           <Tab label="Base Stats"/>
           <Tab label="Artifacts"/>
+          <Tab label="Bonuses"/>
           <Tab label="Totals"/>
           <Tab label="Damage"/>
         </Tabs>
       </header>
       <div className="tabContent">
-        {
-          tab === 0 &&
-          <DamageTab character={character} onCharacter={setCharacter} enemy={enemy} onEnemy={setEnemy} skill={skill}
-                     onSkill={setSkill}/>
-        }
-        {
-          tab === 1 &&
-          <BaseStatsTab characterStats={characterStats} onCharacterStats={setCharacterStats} weaponStats={weaponStats}
-                        onWeaponStats={setWeaponStats}/>
-        }
-        {
-          tab === 2 &&
-          <ArtifactsTab flowerStats={flowerStats} onFlowerStats={setFlowerStats} featherStats={featherStats}
-                        onFeatherStats={setFeatherStats} timepieceStats={timepieceStats}
-                        onTimepieceStats={setTimepieceStats} gobletStats={gobletStats} onGobletStats={setGobletStats}
-                        hatStats={hatStats} onHatStats={setHatStats} setEffectsStats={setEffectsStats}
-                        onSetEffectsStats={setSetEffectsStats} miscStats={miscStats} onMiscStats={setMiscStats}/>
-        }
-        {
-          tab === 3 &&
-          <TotalsTab baseStats={baseStats} artifactsStats={artifactsStats}/>
-        }
-        {
-          tab === 4 &&
-          <>
-          </>
-        }
+        {tabs[tab]}
       </div>
       <SaveDialog open={isSavePopupVisible} setOpen={setIsSavePopupVisible} saveData={saveData}/>
     </div>

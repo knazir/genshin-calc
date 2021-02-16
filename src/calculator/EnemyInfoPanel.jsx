@@ -5,7 +5,7 @@ import {
   Typography,
 } from "@material-ui/core";
 
-const EnemyInfo = ({ defaultData, onData }) => {
+const EnemyInfoPanel = ({ defaultData, onData }) => {
   // State
   const [level, setLevel] = useState(defaultData.level);
   const [elementalRes, setElementalRes] = useState(defaultData.elementalRes);
@@ -15,7 +15,7 @@ const EnemyInfo = ({ defaultData, onData }) => {
   // Effects
   useEffect(() => {
     onData({ level, elementalRes, elementalResReduction, defenseReduction });
-  }, [level, elementalRes, elementalResReduction, defenseReduction, onData]);
+  }, [level, elementalRes, elementalResReduction, defenseReduction]);
 
   // Event Handlers
   const onLevel = e => {
@@ -44,4 +44,4 @@ const EnemyInfo = ({ defaultData, onData }) => {
   );
 };
 
-export default EnemyInfo;
+export default EnemyInfoPanel;

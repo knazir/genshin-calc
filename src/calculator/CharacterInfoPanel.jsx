@@ -13,7 +13,7 @@ import StringUtils from "../utils/StringUtils";
 
 import weapons from "../data/weapons";
 
-const CharacterInfo = ({ defaultData, onData }) => {
+const CharacterInfoPanel = ({ defaultData, onData }) => {
   // State
   const [level, setLevel] = useState(defaultData.level);
   const [weaponType, setWeaponType] = useState(defaultData.weaponType);
@@ -21,7 +21,7 @@ const CharacterInfo = ({ defaultData, onData }) => {
   // Effects
   useEffect(() => {
     onData({ level, weaponType });
-  }, [level, weaponType, onData]);
+  }, [level, weaponType]);
 
   // Event Handlers
   const onLevel = e => {
@@ -50,4 +50,4 @@ const CharacterInfo = ({ defaultData, onData }) => {
   );
 };
 
-export default CharacterInfo;
+export default CharacterInfoPanel;

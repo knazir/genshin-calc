@@ -1,17 +1,17 @@
 import React from "react";
 import { GridList, GridListTile } from "@material-ui/core";
 
-import StatPanel from "./StatPanel";
+import StatsPanel from "./StatsPanel";
 
 const BaseStatsTab = ({ characterStats, onCharacterStats, weaponStats, onWeaponStats }) => {
   return (
-    <GridList cellHeight={500} spacing={10} cols={3}>
+    <GridList cellHeight={500} spacing={10} cols={2}>
       <GridListTile cols={1}>
-        <StatPanel title="Character" defaultData={characterStats} onData={onCharacterStats}
-                   requiredStats={["atk", "def", "hp", "critRate", "critDamage", "energyRecharge"]}/>
+        <StatsPanel title="Character" defaultData={characterStats} onData={onCharacterStats}
+                    requiredStats={["atk", "def", "hp", "critRate", "critDamage", "energyRecharge"]}/>
       </GridListTile>
       <GridListTile cols={1}>
-        <StatPanel title="Weapon" defaultData={weaponStats} onData={onWeaponStats} requiredStats={["atk"]}/>
+        <StatsPanel title="Weapon" defaultData={weaponStats} onData={onWeaponStats} requiredStats={["atk"]}/>
       </GridListTile>
     </GridList>
   );

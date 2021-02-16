@@ -1,21 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   createMuiTheme,
   CssBaseline,
-  Link,
+  Link, Snackbar,
   ThemeProvider,
   Typography,
   useMediaQuery
 } from "@material-ui/core";
 
+import ReactUtils from "./utils/ReactUtils";
+
 import Calculator from "./calculator/Calculator";
 import Welcome from "./main/Welcome";
 
 import "./App.css";
+import Alert from "@material-ui/lab/Alert";
 
 const App = () => {
-  const [isLoaded, setIsLoaded] = useState(true);
+  // State
+  const [isLoaded, setIsLoaded] = useState(false);
   const [saveData, setSaveData] = useState({});
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isErrorOpen, setIsErrorOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  // Effects
+  useEffect(() => {
+    ReactUtils.registerSuccessHandler(onSuccess);
+    ReactUtils.registerErrorHandler(onError);
+  }, []);
+
+  // Theme
   const theme = React.useMemo(
     () =>
       createMuiTheme({
@@ -25,6 +41,15 @@ const App = () => {
       })
   );
 
+  // Event Handlers
+  const onSuccess = message => {
+    setSuccessMessage(message);
+    setIsSuccessOpen(true);
+  };
+  const onError = message => {
+    setErrorMessage(message);
+    setIsErrorOpen(true);
+  };
   const loadApp = loadedSaveData => {
     setSaveData(Object.assign(saveData, loadedSaveData));
     setIsLoaded(true);
@@ -45,6 +70,16 @@ const App = () => {
           </Typography>
         </div>
       </div>
+      <Snackbar open={isSuccessOpen} autoHideDuration={3000} onClose={() => setIsSuccessOpen(false)}>
+        <Alert onClose={() => setIsSuccessOpen(false)} severity="success">
+          {successMessage}
+        </Alert>
+      </Snackbar>
+      <Snackbar open={isErrorOpen} autoHideDuration={3000} onClose={() => setIsErrorOpen(false)}>
+        <Alert onClose={() => setIsErrorOpen(false)} severity="error">
+          {errorMessage}
+        </Alert>
+      </Snackbar>
     </ThemeProvider>
   );
 };
