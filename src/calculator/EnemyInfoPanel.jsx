@@ -1,21 +1,38 @@
 import React, { useEffect, useState } from "react";
 import {
+  Divider,
   Paper,
   TextField,
   Typography,
 } from "@material-ui/core";
 
-const EnemyInfoPanel = ({ defaultData, onData }) => {
+import DamageUtils from "../utils/DamageUtils";
+
+const EnemyInfoPanel = ({ defaultData, onData, character }) => {
   // State
   const [level, setLevel] = useState(defaultData.level);
   const [elementalRes, setElementalRes] = useState(defaultData.elementalRes);
   const [elementalResReduction, setElementalResReduction] = useState(defaultData.elementalResReduction);
   const [defenseReduction, setDefenseReduction] = useState(defaultData.defenseReduction);
+  const [defense, setDefense] = useState(DamageUtils.getEnemyDefense(level));
+  const [defenseMult, setDefenseMult] = useState(DamageUtils.getEnemyDefenseMultiplier(character.level, level,
+                                                                                       defenseReduction));
+  const [resMult, setRestMult] = useState(DamageUtils.getEnemyResistanceMultiplier(elementalRes,
+                                                                                   elementalResReduction));
 
   // Effects
   useEffect(() => {
-    onData({ level, elementalRes, elementalResReduction, defenseReduction });
-  }, [level, elementalRes, elementalResReduction, defenseReduction]);
+    setDefense(DamageUtils.getEnemyDefense(level));
+  }, [level]);
+  useEffect(() => {
+    setDefenseMult(DamageUtils.getEnemyDefenseMultiplier(character.level, level, defenseReduction));
+  }, [character, level, defenseReduction]);
+  useEffect(() => {
+    setRestMult(DamageUtils.getEnemyResistanceMultiplier(elementalRes, elementalResReduction));
+  }, [elementalRes, elementalResReduction]);
+  useEffect(() => {
+    onData({ level, elementalRes, elementalResReduction, defenseReduction, defense, defenseMult, resMult });
+  }, [level, elementalRes, elementalResReduction, defenseReduction, defense, defenseMult, resMult]);
 
   // Event Handlers
   const onLevel = e => {
@@ -40,6 +57,10 @@ const EnemyInfoPanel = ({ defaultData, onData }) => {
                  onChange={onElementalResReduction}/>
       <TextField id="defenseReduction" label="Defense Reduction (%)" type="number" value={defenseReduction}
                  onChange={onDefenseReduction}/>
+       <Divider className="panelDivider"/>
+       <TextField readOnly disabled id="enemyDefense" label="Defense" type="number" value={defense}/>
+      <TextField readOnly disabled id="enemyDefenseMult" label="Defense Multiplier" type="number" value={defenseMult}/>
+      <TextField readOnly disabled id="enemyResMult" label="Resistance Multiplier" type="number" value={resMult}/>
     </Paper>
   );
 };

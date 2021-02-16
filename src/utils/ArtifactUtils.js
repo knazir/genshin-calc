@@ -21,18 +21,18 @@ export default class ArtifactUtils {
 
     // ATK
     const atkPercent = this._sumStats("atkPercent", baseStats, artifactsStats, miscStats);
-    const scaledAtk = this._increaseByPercent(baseStats.atk, atkPercent);
+    const scaledAtk = this._percentIncrease(baseStats.atk, atkPercent);
     finalStats.atk = Math.ceil(scaledAtk + artifactsStats.atk + miscStats.atk);
 
     // DEF
     const defPercent = this._sumStats("defPercent", baseStats, artifactsStats, miscStats);
-    const scaledDef = this._increaseByPercent(characterStats.def, defPercent);
+    const scaledDef = this._percentIncrease(characterStats.def, defPercent);
     finalStats.def = Math.ceil(scaledDef + weaponStats.def + artifactsStats.def + miscStats.def);
 
     // HP
     const hpPercent = this._sumStats("hpPercent", baseStats, artifactsStats, miscStats);
-    const scaledHp = this._increaseByPercent(characterStats.hp, hpPercent);
-    finalStats.def = Math.ceil(scaledHp + weaponStats.hp + artifactsStats.hp + miscStats.hp);
+    const scaledHp = this._percentIncrease(characterStats.hp, hpPercent);
+    finalStats.hp = Math.ceil(scaledHp + weaponStats.hp + artifactsStats.hp + miscStats.hp);
 
     // Simple-Summed Stats
     finalStats.critRate = this._sumStats("critRate", baseStats, artifactsStats, miscStats);
@@ -45,30 +45,22 @@ export default class ArtifactUtils {
     return finalStats;
   }
 
-  static _sumStat(type, ...statCollections) {
-    let total = 0;
-    statCollections.forEach(stats => total += stats[type]);
-    return total;
-  }
-
-  static _getSpecialStatIncrease(type, specialStats) {
-
-  }
-
   static _sumStats(type, ...stats) {
     let total = 0;
     stats.filter(statCollection => statCollection[type]).forEach(statCollection => total += statCollection[type]);
     return total;
   }
 
-  static _increaseByPercent(value, percentage) {
+  static _percentIncrease(value, percentage) {
     return value * (1 + (percentage / 100));
   }
 
   static _filledStats(statCollection) {
     const filledStats = {};
-    Object.keys(stats).filter(stat => statCollection[stat] == null).forEach(stat => filledStats[stat] = 0);
-    Object.entries(statCollection).forEach(([stat, value]) => filledStats[stat] = value);
+    Object.keys(stats).forEach(stat => {
+      if (statCollection[stat] == null) filledStats[stat] = 0;
+      else filledStats[stat] = statCollection[stat];
+    });
     return filledStats;
   }
 }

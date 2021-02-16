@@ -47,3 +47,7 @@
 .formPanel > *:not(:last-child) {
   margin-bottom: 0.3em;
 }
+
+.formPanel .panelDivider {
+  margin: 0.5em 0;
+}

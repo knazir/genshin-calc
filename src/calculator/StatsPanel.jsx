@@ -77,6 +77,7 @@ const StatsPanel = ({ defaultData, data, onData, readOnly, requiredStats = [], t
       return ReactUtils.onError("Stat type already exists.");
     }
     setAppliedStats([...appliedStats, { type: newStatType, value: 0 }]);
+    setNewStatType("");
   };
 
   // DOM Elements

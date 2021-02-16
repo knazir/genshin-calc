@@ -68,12 +68,14 @@ const Calculator = ({ data }) => {
     setBaseStats(ArtifactUtils.addStats(characterStats, weaponStats));
     setArtifactsStats(ArtifactUtils.addStats(flowerStats, featherStats, timepieceStats, gobletStats, hatStats,
                                              setEffectsStats));
-    setFinalStats(ArtifactUtils.getFinalStats(characterStats, weaponStats, baseStats, artifactsStats, miscStats,
-                                              specialStats));
   }, [
     characterStats, weaponStats, flowerStats, featherStats, timepieceStats, gobletStats, hatStats, setEffectsStats,
     miscStats, specialStats
   ]);
+  useEffect(() => {
+    setFinalStats(ArtifactUtils.getFinalStats(characterStats, weaponStats, baseStats, artifactsStats, miscStats,
+                                              specialStats));
+  }, [characterStats, weaponStats, baseStats, artifactsStats, miscStats, specialStats]);
 
   // Event Handlers
   const onSave = () => {
