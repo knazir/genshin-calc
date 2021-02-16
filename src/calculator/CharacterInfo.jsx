@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 
 import StringUtils from "../utils/StringUtils";
+
 import weapons from "../data/weapons";
 
 const CharacterInfo = ({ defaultData, onData }) => {

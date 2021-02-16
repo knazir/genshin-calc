@@ -10,21 +10,19 @@ import {
 
 import Calculator from "./calculator/Calculator";
 import Welcome from "./main/Welcome";
+
 import "./App.css";
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(true);
   const [saveData, setSaveData] = useState({});
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
   const theme = React.useMemo(
     () =>
       createMuiTheme({
         palette: {
-          type: prefersDarkMode ? "dark" : "light",
+          type: "dark",
         },
-      }),
-    [prefersDarkMode],
+      })
   );
 
   const loadApp = loadedSaveData => {

@@ -15,6 +15,7 @@ import AddIcon from "@material-ui/icons/Add";
 import DeleteIcon from "@material-ui/icons/Delete";
 
 import stats from "../data/stats";
+
 import "./StatPanel.css";
 
 const StatPanel = ({ defaultData, onData, readOnly, requiredStats = [], title }) => {

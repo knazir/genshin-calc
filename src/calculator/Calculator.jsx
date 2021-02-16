@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import {
   Button,
-  GridList,
-  GridListTile,
   Tabs,
   Tab,
-  Typography, Dialog, DialogTitle, DialogContent, DialogContentText, TextField, DialogActions
+  Typography,
 } from "@material-ui/core";
 
 import ArtifactUtils from "../utils/ArtifactUtils";
-import CharacterInfo from "./CharacterInfo";
-import EnemyInfo from "./EnemyInfo";
-import SkillInfo from "./SkillInfo";
-import StatPanel from "./StatPanel";
+import ArtifactsTab from "./ArtifactsTab";
+import BaseStatsTab from "./BaseStatsTab";
+import DamageTab from "./DamageTab";
+import TotalsTab from "./TotalsTab";
+
 import "./Calculator.css";
+import SaveDialog from "../main/SaveDialog";
 
 const Calculator = ({ data }) => {
   // State
   const [isSavePopupVisible, setIsSavePopupVisible] = useState(false);
-  const [saveDataText, setSaveDataText] = useState("");
+  const [saveData, setSaveData] = useState({});
   const [tab, setTab] = useState(0);
   const [character, setCharacter] = useState(data.character || {
     level: 90,
@@ -66,7 +66,7 @@ const Calculator = ({ data }) => {
       character, skill, characterStats, weaponStats, setEffectsStats, flowerStats, featherStats,
       timepieceStats, gobletStats, hatStats, miscStats
     };
-    setSaveDataText(JSON.stringify(saveData, null, 2));
+    setSaveData(saveData);
     setIsSavePopupVisible(true);
   };
   const onTab = (e, value) => {
@@ -84,7 +84,7 @@ const Calculator = ({ data }) => {
           </div>
         </div>
         <Tabs variant="scrollable" scrollButtons="auto" value={tab} onChange={onTab}>
-          <Tab label="Character Info"/>
+          <Tab label="Damage Info"/>
           <Tab label="Base Stats"/>
           <Tab label="Artifacts"/>
           <Tab label="Totals"/>
@@ -94,77 +94,25 @@ const Calculator = ({ data }) => {
       <div className="tabContent">
         {
           tab === 0 &&
-          <>
-            <GridList cellHeight={375} spacing={10} cols={3}>
-              <GridListTile cols={1}>
-                <CharacterInfo defaultData={character} onData={setCharacter}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <EnemyInfo defaultData={enemy} onData={setEnemy}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <SkillInfo defaultData={skill} onData={setSkill}/>
-              </GridListTile>
-            </GridList>
-          </>
+          <DamageTab character={character} onCharacter={setCharacter} enemy={enemy} onEnemy={setEnemy} skill={skill}
+                     onSkill={setSkill}/>
         }
         {
           tab === 1 &&
-          <>
-            <GridList cellHeight={500} spacing={10} cols={3}>
-              <GridListTile cols={1}>
-                <StatPanel title="Character" defaultData={characterStats} onData={setCharacterStats}
-                           requiredStats={["atk", "def", "hp", "critRate", "critDamage", "energyRecharge"]}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <StatPanel title="Weapon" defaultData={weaponStats} onData={setWeaponStats} requiredStats={["atk"]}/>
-              </GridListTile>
-            </GridList>
-          </>
+          <BaseStatsTab characterStats={characterStats} onCharacterStats={setCharacterStats} weaponStats={weaponStats}
+                        onWeaponStats={setWeaponStats}/>
         }
         {
           tab === 2 &&
-          <>
-            <GridList cellHeight={300} spacing={10} cols={3}>
-              <GridListTile cols={1}>
-                <StatPanel title="Flower" defaultData={flowerStats} onData={setFlowerStats} requiredStats={["hp"]}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <StatPanel title="Feather" defaultData={featherStats} onData={setFeatherStats} requiredStats={["atk"]}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <StatPanel title="Timepiece" defaultData={timepieceStats} onData={setTimepieceStats}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <StatPanel title="Goblet" defaultData={gobletStats} onData={setGobletStats}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <StatPanel title="Hat" defaultData={hatStats} onData={setHatStats}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <StatPanel title="Set Effects" defaultData={setEffectsStats} onData={setSetEffectsStats}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <StatPanel title="Miscellaneous Stats" defaultData={miscStats} onData={setMiscStats}/>
-              </GridListTile>
-            </GridList>
-          </>
+          <ArtifactsTab flowerStats={flowerStats} onFlowerStats={setFlowerStats} featherStats={featherStats}
+                        onFeatherStats={setFeatherStats} timepieceStats={timepieceStats}
+                        onTimepieceStats={setTimepieceStats} gobletStats={gobletStats} onGobletStats={setGobletStats}
+                        hatStats={hatStats} onHatStats={setHatStats} setEffectsStats={setEffectsStats}
+                        onSetEffectsStats={setSetEffectsStats} miscStats={miscStats} onMiscStats={setMiscStats}/>
         }
         {
           tab === 3 &&
-          <>
-            <GridList cellHeight={300} spacing={10} cols={3}>
-              <GridListTile cols={1}>
-                <StatPanel readOnly title="Base Stat Totals" data={baseStats}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <StatPanel readOnly title="Artifact Totals" data={artifactsStats}/>
-              </GridListTile>
-              <GridListTile cols={1}>
-                <StatPanel readOnly title="Final Stats" data={artifactsStats}/>
-              </GridListTile>
-            </GridList>
-          </>
+          <TotalsTab baseStats={baseStats} artifactsStats={artifactsStats}/>
         }
         {
           tab === 4 &&
@@ -172,22 +120,7 @@ const Calculator = ({ data }) => {
           </>
         }
       </div>
-      {
-        isSavePopupVisible &&
-        <Dialog fullWidth open={isSavePopupVisible}>
-          <DialogTitle id="saveDataTitle">Save Data</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Copy-paste the output below to load your artifacts into the app next time.
-            </DialogContentText>
-            <TextField readOnly fullWidth multiline id="saveData" className="saveData" label="Save Data" margin="dense"
-                       inputProps={{ style: { fontFamily: "source-code-pro, monospace" } }} value={saveDataText}/>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={() => setIsSavePopupVisible(false)}>Ok</Button>
-          </DialogActions>
-        </Dialog>
-      }
+      <SaveDialog open={isSavePopupVisible} setOpen={setIsSavePopupVisible} saveData={saveData}/>
     </div>
   );
 };
