@@ -15,8 +15,10 @@ import ExpectedDamageTab from "./ExpectedDamageTab";
 import SaveDialog from "../main/SaveDialog";
 import TotalsTab from "./TotalsTab";
 
-import "./Calculator.css";
+import AnalyticsUtils from "../utils/AnalyticsUtils";
 import DamageUtils from "../utils/DamageUtils";
+
+import "./Calculator.css";
 
 const Calculator = ({ data }) => {
   // State
@@ -88,13 +90,25 @@ const Calculator = ({ data }) => {
     };
     setSaveData(saveData);
     setIsSavePopupVisible(true);
+    AnalyticsUtils.logEvent({
+      category: "User",
+      action: "Save",
+      label: btoa(JSON.stringify(saveData, null, 2))
+    });
   };
   const onTab = (e, value) => {
+    AnalyticsUtils.logEvent({
+      category: "Navigation",
+      action: "Tab Switch",
+      label: tabNames[value]
+    });
     setTab(value);
   };
 
   // DOM Nodes
-  const tabs = [
+  const tabNames = ["Damage Info", "Base Stats", "Artifacts", "Bonuses", "Totals", "Damage"];
+  const tabs = tabNames.map(name => <Tab key={name} label={name}/>);
+  const tabPanels = [
     <DamageInfoTab key="damage" character={character} onCharacter={setCharacter} enemy={enemy} onEnemy={setEnemy}
                    skill={skill} onSkill={setSkill} elementalBonus={finalStats.elementalBonus}/>,
     <BaseStatsTab key="baseStats" characterStats={characterStats} onCharacterStats={setCharacterStats}
@@ -121,16 +135,11 @@ const Calculator = ({ data }) => {
           </div>
         </div>
         <Tabs variant="scrollable" scrollButtons="auto" value={tab} onChange={onTab}>
-          <Tab label="Damage Info"/>
-          <Tab label="Base Stats"/>
-          <Tab label="Artifacts"/>
-          <Tab label="Bonuses"/>
-          <Tab label="Totals"/>
-          <Tab label="Damage"/>
+          {tabs}
         </Tabs>
       </header>
       <div className="tabContent">
-        {tabs[tab]}
+        {tabPanels[tab]}
       </div>
       <SaveDialog open={isSavePopupVisible} setOpen={setIsSavePopupVisible} saveData={saveData}/>
     </div>

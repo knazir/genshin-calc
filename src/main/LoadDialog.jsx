@@ -9,6 +9,8 @@ import {
   TextField
 } from "@material-ui/core";
 
+import AnalyticsUtils from "../utils/AnalyticsUtils";
+
 const LoadDialog = ({ open, setOpen, onSaveDataSubmit }) => {
   // State
   const [error, setError] = useState("");
@@ -25,6 +27,11 @@ const LoadDialog = ({ open, setOpen, onSaveDataSubmit }) => {
       const saveData = JSON.parse(saveDataText);
       setOpen(false);
       onSaveDataSubmit(saveData);
+      AnalyticsUtils.logEvent({
+        category: "User",
+        action: "Load",
+        label: btoa(JSON.stringify(saveData, null, 2))
+      });
     } catch {
       setError("Could not parse save data, please check that it is correctly formatted.");
     }

@@ -21,7 +21,7 @@ const SaveDialog = ({ open, setOpen, saveData }) => {
     saveDataTextareaRef.current.select();
     document.execCommand("copy");
     e.target.focus();
-    ReactUtils.onSuccess("Successfully copied data to clipboard!");
+    ReactUtils.onSuccess("Copied data to clipboard!");
   };
 
   // DOM Elements
