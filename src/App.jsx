@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import {
   createMuiTheme,
   CssBaseline,
   Link, Snackbar,
   ThemeProvider,
   Typography,
-  useMediaQuery
 } from "@material-ui/core";
 
 import ReactUtils from "./utils/ReactUtils";
@@ -25,10 +25,26 @@ const App = () => {
   const [isErrorOpen, setIsErrorOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Hooks
+  const location = useLocation();
+  const history = useHistory();
+  const query = new URLSearchParams(location.search);
+
   // Effects
   useEffect(() => {
     ReactUtils.registerSuccessHandler(onSuccess);
     ReactUtils.registerErrorHandler(onError);
+
+    if (query.has("data")) {
+      try {
+        const saveDataFromUrl = JSON.parse(atob(query.get("data")));
+        loadApp(saveDataFromUrl);
+      } catch {
+        ReactUtils.onError("There was a problem loading the data from the URL.");
+      }
+      query.delete("data");
+      history.push("");
+    }
   }, []);
 
   // Theme
