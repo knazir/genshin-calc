@@ -18,7 +18,7 @@ const SaveDialog = ({ open, setOpen, saveData }) => {
   const getShareableLink = (saveData) => {
     const encodedData = btoa(JSON.stringify(saveData));
     const { protocol, host, pathname } = window.location;
-    return `${protocol}://${host}${pathname}?data=${encodedData}`;
+    return `${protocol}//${host}${pathname}?data=${encodedData}`;
   };
 
   // State
