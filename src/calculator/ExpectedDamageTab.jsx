@@ -50,7 +50,7 @@ const ExpectedDamageTab = ({ character, enemy, skill, finalStats, defaultErBonus
     </TableRow>
   );
   const reactionRows = reactionTypes.map(type => {
-    const reactionMult = DamageUtils.getReactionMultiplierPercent(type, skill.element);
+    const reactionMult = DamageUtils.getReactionMultiplier(type, skill.element);
     const elementalMasteryMult = DamageUtils.getElementalMasteryMultiplier(type, finalStats.elementalMastery);
     const elementalReactionMult = erBonuses[type] || 0;
     const elementalNonCrit = DamageUtils.getElementalReactionDamage(type, baseNonCrit, character.level, reactionMult,
@@ -63,7 +63,7 @@ const ExpectedDamageTab = ({ character, enemy, skill, finalStats, defaultErBonus
     return (
       <TableRow key={type}>
         <TableCell component="th" scope="row">{embonus.names[type]}</TableCell>
-        <TableCell>{reactionMult}</TableCell>
+        <TableCell>{reactionMult * 100}</TableCell>
         <TableCell>{elementalMasteryMult}</TableCell>
         <TableCell>
           <TextField id="erBonus" type="number" value={erBonuses[type]} onChange={e => onErBonus(e, type)}/>

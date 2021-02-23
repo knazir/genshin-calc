@@ -68,16 +68,17 @@ export default class DamageUtils {
       hydro: ["vaporize", "electroCharge"],
       physical: ["shatter"],
       pyro: ["melt", "vaporize", "overload"]
-    }
-    const result = typeMap[element] || [];
+    };
+    let result = typeMap[element] || [];
+    if (!result) result = [];
     if ((weaponType === "claymore" || doesShatter) && result.indexOf("shatter") === -1) result.push("shatter");
     return result.sort();
   }
 
-  static getReactionMultiplierPercent(type, activatingElement) {
+  static getReactionMultiplier(type, activatingElement) {
     if (type === "melt" || type === "vaporize") {
-      if (activatingElement === "pyro") return 200;
-      else return 150;
+      if (activatingElement === "pyro") return 2;
+      else return 1.5;
     } else {
       return 0;
     }
@@ -90,16 +91,16 @@ export default class DamageUtils {
     } else if (["overload", "superconduct", "electroCharge", "shatter", "swirl"].indexOf(type) !== -1) {
       multiplier = 6.66;
     }
-    const result = ((multiplier * elementalMastery) / (1400 + elementalMastery)) * 100;
+    const result = (multiplier * (elementalMastery / (1400 + elementalMastery))) * 100;
     return MathUtils.roundToDecimals(result, 1);
   }
 
   static getElementalReactionDamage(type, baseDamage, characterLevel, reactionMult, elementalMasteryMult,
                                     enemyResistanceMultiplier, elementalReactionMult = 0) {
     if (type === "vaporize" || type === "melt") {
-      const scaledBaseDamage = MathUtils.percentIncrease(baseDamage, reactionMult + elementalMasteryMult);
-      const scaledElementalDamage = MathUtils.percentIncrease(scaledBaseDamage, elementalReactionMult);
-      return MathUtils.roundToDecimals(scaledElementalDamage, 0);
+      const amplifyingMult = MathUtils.percentIncrease(reactionMult, elementalMasteryMult + elementalReactionMult);
+      const scaledBaseDamage = baseDamage * amplifyingMult;
+      return MathUtils.roundToDecimals(scaledBaseDamage, 0);
     } else {
       const elementalDamage = this._getTransformativeReactionDamage(type, characterLevel);
       const scaledBaseDamage = MathUtils.percentIncrease(elementalDamage, elementalMasteryMult);
