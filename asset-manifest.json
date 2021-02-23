@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/genshin-calc/static/css/main.a6227af5.chunk.css",
-    "main.js": "/genshin-calc/static/js/main.18bc7333.chunk.js",
-    "main.js.map": "/genshin-calc/static/js/main.18bc7333.chunk.js.map",
+    "main.js": "/genshin-calc/static/js/main.ad920e83.chunk.js",
+    "main.js.map": "/genshin-calc/static/js/main.ad920e83.chunk.js.map",
     "runtime-main.js": "/genshin-calc/static/js/runtime-main.398db883.js",
     "runtime-main.js.map": "/genshin-calc/static/js/runtime-main.398db883.js.map",
     "static/js/2.1b8d0e46.chunk.js": "/genshin-calc/static/js/2.1b8d0e46.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.398db883.js",
     "static/js/2.1b8d0e46.chunk.js",
     "static/css/main.a6227af5.chunk.css",
-    "static/js/main.18bc7333.chunk.js"
+    "static/js/main.ad920e83.chunk.js"
   ]
 }
