@@ -1,5 +1,6 @@
 # custom
 /.idea
+scripts/output
 
 # dependencies
 /node_modules
