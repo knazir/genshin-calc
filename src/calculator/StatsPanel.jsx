@@ -20,7 +20,7 @@ import stats from "../data/stats";
 
 import "./StatsPanel.css";
 
-const StatsPanel = ({ defaultData, data, onData, readOnly, requiredStats = [], title }) => {
+const StatsPanel = ({ defaultData, data, onData, readOnly, requiredStats = [], title, clearEmptyStatsOnLoad }) => {
   // Helpers
   const statsListFromObj = statsObj => {
     return Object.entries(statsObj).filter(([type, _]) => requiredStats.indexOf(type) === -1)
@@ -44,6 +44,17 @@ const StatsPanel = ({ defaultData, data, onData, readOnly, requiredStats = [], t
   const [newStatType, setNewStatType] = useState("");
 
   // Effects
+  useEffect(() => {
+    if (clearEmptyStatsOnLoad) {
+      let prunedStats = appliedStats;
+      while (true) {
+        const emptyStatIndex = prunedStats.findIndex(({ value }) => !value);
+        if (emptyStatIndex === -1) break;
+        prunedStats = [...prunedStats.slice(0, emptyStatIndex), ...prunedStats.slice(emptyStatIndex + 1)];
+      }
+      setAppliedStats(prunedStats);
+    }
+  }, []);
   useEffect(() => {
     const statsObj = {};
     appliedStats.forEach(({ type, value }) => statsObj[type] = value);

@@ -38,6 +38,8 @@ const CharacterInfoPanel = ({ defaultData, onData }) => {
     const character = characters[charId];
 
     setBaseCharacter(charId);
+
+    if (!character) return;
     setWeaponType(character.weapon);
 
     let maxLevel = 0;
@@ -47,9 +49,13 @@ const CharacterInfoPanel = ({ defaultData, onData }) => {
   }
 
   // DOM Elements
-  const baseCharacterItems = Object.entries(characters).map(([charId, charData]) => {
-    return <MenuItem key={charId} value={charId}>{charData.name}</MenuItem>;
-  });
+  const baseCharacterItems = [
+    <MenuItem key="none" value="">None</MenuItem>,
+    ... Object.entries(characters).map(([charId, charData]) => {
+      return <MenuItem key={charId} value={charId}>{charData.name}</MenuItem>;
+    })
+  ];
+
   const weaponTypeItems = Object.entries(weapons).map(([wepId, wepName]) => {
     return <MenuItem key={wepId} value={wepId}>{StringUtils.capitalize(wepName)}</MenuItem>;
   });

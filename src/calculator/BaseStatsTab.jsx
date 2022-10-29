@@ -18,6 +18,11 @@ const BaseStatsTab = ({ character, baseCharacterStats, characterStats, onCharact
     }
   }
 
+  let requiredAdditionalStats = [];
+  if (!hasBaseCharStats) {
+    requiredAdditionalStats = ["atk", "def", "hp", "critRate", "critDamage", "energyRecharge"];
+  }
+
   return (
     <GridList cellHeight={500} spacing={10} cols={numCols}>
       {
@@ -27,10 +32,11 @@ const BaseStatsTab = ({ character, baseCharacterStats, characterStats, onCharact
         </GridListTile>
       }
       <GridListTile cols={1}>
-        <StatsPanel title="Additional Base Stats" defaultData={characterStats} onData={onCharacterStats}/>
+        <StatsPanel title="Additional Base Stats" defaultData={characterStats} onData={onCharacterStats}
+                    requiredStats={requiredAdditionalStats} clearEmptyStatsOnLoad={hasBaseCharStats}/>
       </GridListTile>
       <GridListTile cols={1}>
-        <StatsPanel title="Weapon" defaultData={weaponStats} onData={onWeaponStats} requiredStats={["atk"]}/>
+        <StatsPanel title="Weapon" defaultData={weaponStats} onData={onWeaponStats}/>
       </GridListTile>
     </GridList>
   );
