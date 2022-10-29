@@ -12,10 +12,6 @@ const BaseStatsTab = ({ character, baseCharacterStats, characterStats, onCharact
   const hasBaseCharStats = Boolean(character.baseCharacter);
   const hasBaseWeaponStats = Boolean(character.baseWeapon);
 
-  let numCols = 2;
-  if (hasBaseCharStats) numCols++;
-  if (hasBaseWeaponStats) numCols++;
-
   let additionalCharacterStatsTitle = "Character Stats";
   let baseCharacterStatsTitle = "Base Character Stats";
   if (hasBaseCharStats) {
@@ -51,7 +47,7 @@ const BaseStatsTab = ({ character, baseCharacterStats, characterStats, onCharact
   }
 
   return (
-    <GridList cellHeight={500} spacing={10} cols={numCols}>
+    <GridList cellHeight={500} spacing={10} cols={2}>
       {
         hasBaseCharStats &&
         <GridListTile cols={1}>
@@ -71,7 +67,7 @@ const BaseStatsTab = ({ character, baseCharacterStats, characterStats, onCharact
       <GridListTile cols={1}>
         <StatsPanel title={additionalWeaponStatsTitle} defaultData={weaponStats} onData={onWeaponStats}
                     requiredStats={requiredAdditionalWeaponStats} clearEmptyStatsOnLoad={hasBaseWeaponStats}/>
-        </GridListTile>
+      </GridListTile>
     </GridList>
   );
 };
