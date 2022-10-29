@@ -4,22 +4,10 @@
   "weapon": "polearm",
   "element": "geo",
   "baseStats": {
-    "1": {
-      "hp": 1143,
-      "atk": 19,
-      "def": 57,
-      "elementalBonus": 5
-    },
     "20": {
       "hp": 2967,
       "atk": 50,
       "def": 148
-    },
-    "40": {
-      "hp": 6604,
-      "atk": 112,
-      "def": 331,
-      "elementalBonus": 33
     },
     "50": {
       "hp": 7599,
@@ -27,23 +15,11 @@
       "def": 381,
       "elementalBonus": 7.2
     },
-    "60": {
-      "hp": 10229,
-      "atk": 174,
-      "def": 513,
-      "elementalBonus": 51
-    },
     "70": {
       "hp": 11243,
       "atk": 192,
       "def": 564,
       "elementalBonus": 14.4
-    },
-    "80": {
-      "hp": 13662,
-      "atk": 233,
-      "def": 685,
-      "elementalBonus": 68
     },
     "90": {
       "hp": 14695,

@@ -1,5 +1,5 @@
 import elements from "../elements";
-import weapons from "../weapons";
+import weapons from "../weaponTypes";
 
 const context = require.context("./", true, /.json$/);
 const processedCharacters = {};
@@ -18,7 +18,7 @@ for (const charData of Object.values(processedCharacters)) {
         console.error(`Invalid weapon data found for character ${charData.name}, (${charData.weapon})`);
     }
 
-    if (!validElements.has(charData.element)) {
+    if (charData.element && !validElements.has(charData.element)) {
         console.error(`Invalid element data found for character ${charData.name}, (${charData.element})`);
     }
 

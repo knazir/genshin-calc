@@ -1,0 +1,39 @@
+{
+  "name": "Favonius Lance",
+  "id": "favoniusLance",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 44,
+      "energyRecharge": 4
+    },
+    "20": {
+      "atk": 144,
+      "energyRecharge": 14
+    },
+    "40": {
+      "atk": 252,
+      "energyRecharge": 25
+    },
+    "50": {
+      "atk": 319,
+      "energyRecharge": 31
+    },
+    "60": {
+      "atk": 387,
+      "energyRecharge": 38
+    },
+    "70": {
+      "atk": 455,
+      "energyRecharge": 45
+    },
+    "80": {
+      "atk": 523,
+      "energyRecharge": 52
+    },
+    "90": {
+      "atk": 565,
+      "energyRecharge": 27.9
+    }
+  }
+}

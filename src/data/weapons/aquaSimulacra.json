@@ -1,0 +1,39 @@
+{
+  "name": "Aqua Simulacra",
+  "id": "aquaSimulacra",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 44,
+      "critDamage": 4
+    },
+    "20": {
+      "atk": 141,
+      "critDamage": 14
+    },
+    "40": {
+      "atk": 241,
+      "critDamage": 24
+    },
+    "50": {
+      "atk": 307,
+      "critDamage": 30
+    },
+    "60": {
+      "atk": 373,
+      "critDamage": 37
+    },
+    "70": {
+      "atk": 439,
+      "critDamage": 43
+    },
+    "80": {
+      "atk": 506,
+      "critDamage": 50
+    },
+    "90": {
+      "atk": 542,
+      "critDamage": 80.4
+    }
+  }
+}

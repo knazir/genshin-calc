@@ -2,24 +2,12 @@
   "name": "Traveler",
   "id": "traveler",
   "weapon": "sword",
-  "element": "none",
+  "element": null,
   "baseStats": {
-    "1": {
-      "hp": 911,
-      "atk": 17,
-      "def": 57,
-      "atkPercent": 5
-    },
     "20": {
       "hp": 2342,
       "atk": 45,
       "def": 147
-    },
-    "40": {
-      "hp": 5012,
-      "atk": 97,
-      "def": 314,
-      "atkPercent": 31
     },
     "50": {
       "hp": 5766,
@@ -27,23 +15,11 @@
       "def": 361,
       "atkPercent": 6
     },
-    "60": {
-      "hp": 7648,
-      "atk": 149,
-      "def": 480,
-      "atkPercent": 48
-    },
     "70": {
       "hp": 8400,
       "atk": 164,
       "def": 527,
       "atkPercent": 12
-    },
-    "80": {
-      "hp": 10121,
-      "atk": 197,
-      "def": 635,
-      "atkPercent": 63
     },
     "90": {
       "hp": 10874,

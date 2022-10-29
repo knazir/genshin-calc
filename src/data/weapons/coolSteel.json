@@ -1,0 +1,39 @@
+{
+  "name": "Cool Steel",
+  "id": "coolSteel",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 39,
+      "atkPercent": 3
+    },
+    "20": {
+      "atk": 113,
+      "atkPercent": 11
+    },
+    "40": {
+      "atk": 189,
+      "atkPercent": 18
+    },
+    "50": {
+      "atk": 236,
+      "atkPercent": 23
+    },
+    "60": {
+      "atk": 282,
+      "atkPercent": 28
+    },
+    "70": {
+      "atk": 329,
+      "atkPercent": 32
+    },
+    "80": {
+      "atk": 375,
+      "atkPercent": 37
+    },
+    "90": {
+      "atk": 401,
+      "atkPercent": 32.1
+    }
+  }
+}

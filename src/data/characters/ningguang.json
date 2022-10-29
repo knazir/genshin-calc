@@ -4,22 +4,10 @@
   "weapon": "catalyst",
   "element": "geo",
   "baseStats": {
-    "1": {
-      "hp": 820,
-      "atk": 17,
-      "def": 48,
-      "elementalBonus": 4
-    },
     "20": {
       "hp": 2108,
       "atk": 45,
       "def": 123
-    },
-    "40": {
-      "hp": 4511,
-      "atk": 97,
-      "def": 264,
-      "elementalBonus": 26
     },
     "50": {
       "hp": 5189,
@@ -27,23 +15,11 @@
       "def": 303,
       "elementalBonus": 6
     },
-    "60": {
-      "hp": 6883,
-      "atk": 149,
-      "def": 403,
-      "elementalBonus": 40
-    },
     "70": {
       "hp": 7560,
       "atk": 164,
       "def": 442,
       "elementalBonus": 12
-    },
-    "80": {
-      "hp": 9109,
-      "atk": 197,
-      "def": 533,
-      "elementalBonus": 53
     },
     "90": {
       "hp": 9787,

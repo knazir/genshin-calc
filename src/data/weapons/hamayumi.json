@@ -1,0 +1,39 @@
+{
+  "name": "Hamayumi",
+  "id": "hamayumi",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 41,
+      "atkPercent": 4
+    },
+    "20": {
+      "atk": 125,
+      "atkPercent": 12
+    },
+    "40": {
+      "atk": 210,
+      "atkPercent": 21
+    },
+    "50": {
+      "atk": 264,
+      "atkPercent": 26
+    },
+    "60": {
+      "atk": 319,
+      "atkPercent": 31
+    },
+    "70": {
+      "atk": 373,
+      "atkPercent": 37
+    },
+    "80": {
+      "atk": 427,
+      "atkPercent": 42
+    },
+    "90": {
+      "atk": 454,
+      "atkPercent": 50.3
+    }
+  }
+}

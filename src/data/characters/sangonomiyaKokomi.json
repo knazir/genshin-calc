@@ -1,0 +1,31 @@
+{
+  "name": "Sangonomiya Kokomi",
+  "id": "sangonomiyaKokomi",
+  "weapon": "catalyst",
+  "element": "hydro",
+  "baseStats": {
+    "20": {
+      "hp": 2720,
+      "atk": 47,
+      "def": 132
+    },
+    "50": {
+      "hp": 6965,
+      "atk": 121,
+      "def": 339,
+      "elementalBonus": 7.2
+    },
+    "70": {
+      "hp": 10306,
+      "atk": 179,
+      "def": 502,
+      "elementalBonus": 14.4
+    },
+    "90": {
+      "hp": 13470,
+      "atk": 234,
+      "def": 657,
+      "elementalBonus": 28.8
+    }
+  }
+}

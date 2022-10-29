@@ -1,0 +1,39 @@
+{
+  "name": "Skyward Spine",
+  "id": "skywardSpine",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 48,
+      "energyRecharge": 4
+    },
+    "20": {
+      "atk": 164,
+      "energyRecharge": 16
+    },
+    "40": {
+      "atk": 292,
+      "energyRecharge": 29
+    },
+    "50": {
+      "atk": 373,
+      "energyRecharge": 37
+    },
+    "60": {
+      "atk": 455,
+      "energyRecharge": 45
+    },
+    "70": {
+      "atk": 537,
+      "energyRecharge": 53
+    },
+    "80": {
+      "atk": 621,
+      "energyRecharge": 62
+    },
+    "90": {
+      "atk": 674,
+      "energyRecharge": 33.5
+    }
+  }
+}

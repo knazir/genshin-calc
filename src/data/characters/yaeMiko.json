@@ -1,0 +1,31 @@
+{
+  "name": "Yae Miko",
+  "id": "yaeMiko",
+  "weapon": "catalyst",
+  "element": "electro",
+  "baseStats": {
+    "20": {
+      "hp": 2094,
+      "atk": 68,
+      "def": 114
+    },
+    "50": {
+      "hp": 5363,
+      "atk": 175,
+      "def": 294,
+      "critRate": 4.8
+    },
+    "70": {
+      "hp": 7935,
+      "atk": 259,
+      "def": 435,
+      "critRate": 9.6
+    },
+    "90": {
+      "hp": 10372,
+      "atk": 339,
+      "def": 568,
+      "critRate": 19.2
+    }
+  }
+}

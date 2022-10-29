@@ -4,22 +4,10 @@
   "weapon": "bow",
   "element": "pyro",
   "baseStats": {
-    "1": {
-      "hp": 793,
-      "atk": 18,
-      "def": 50,
-      "atkPercent": 5
-    },
     "20": {
       "hp": 2037,
       "atk": 48,
       "def": 129
-    },
-    "40": {
-      "hp": 4361,
-      "atk": 102,
-      "def": 276,
-      "atkPercent": 27
     },
     "50": {
       "hp": 5016,
@@ -27,23 +15,11 @@
       "def": 318,
       "atkPercent": 6
     },
-    "60": {
-      "hp": 6654,
-      "atk": 156,
-      "def": 422,
-      "atkPercent": 42
-    },
     "70": {
       "hp": 7308,
       "atk": 172,
       "def": 463,
       "atkPercent": 12
-    },
-    "80": {
-      "hp": 8805,
-      "atk": 207,
-      "def": 559,
-      "atkPercent": 55
     },
     "90": {
       "hp": 9461,

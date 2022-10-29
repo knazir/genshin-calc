@@ -4,22 +4,10 @@
   "weapon": "catalyst",
   "element": "hydro",
   "baseStats": {
-    "1": {
-      "hp": 820,
-      "atk": 13,
-      "def": 56,
-      "hpPercent": 5
-    },
     "20": {
       "hp": 2108,
       "atk": 34,
       "def": 144
-    },
-    "40": {
-      "hp": 4511,
-      "atk": 73,
-      "def": 308,
-      "hpPercent": 30
     },
     "50": {
       "hp": 5189,
@@ -27,23 +15,11 @@
       "def": 354,
       "hpPercent": 6
     },
-    "60": {
-      "hp": 6883,
-      "atk": 112,
-      "def": 470,
-      "hpPercent": 47
-    },
     "70": {
       "hp": 7560,
       "atk": 123,
       "def": 516,
       "hpPercent": 12
-    },
-    "80": {
-      "hp": 9109,
-      "atk": 148,
-      "def": 622,
-      "hpPercent": 62
     },
     "90": {
       "hp": 9787,

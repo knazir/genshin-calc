@@ -1,0 +1,39 @@
+{
+  "name": "Blackcliff Longsword",
+  "id": "blackcliffLongsword",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 44,
+      "critDamage": 4
+    },
+    "20": {
+      "atk": 144,
+      "critDamage": 14
+    },
+    "40": {
+      "atk": 252,
+      "critDamage": 25
+    },
+    "50": {
+      "atk": 319,
+      "critDamage": 31
+    },
+    "60": {
+      "atk": 387,
+      "critDamage": 38
+    },
+    "70": {
+      "atk": 455,
+      "critDamage": 45
+    },
+    "80": {
+      "atk": 523,
+      "critDamage": 52
+    },
+    "90": {
+      "atk": 565,
+      "critDamage": 33.5
+    }
+  }
+}

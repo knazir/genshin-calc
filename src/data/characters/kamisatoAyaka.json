@@ -1,0 +1,31 @@
+{
+  "name": "Kamisato Ayaka",
+  "id": "kamisatoAyaka",
+  "weapon": "sword",
+  "element": "cryo",
+  "baseStats": {
+    "20": {
+      "hp": 2596,
+      "atk": 69,
+      "def": 158
+    },
+    "50": {
+      "hp": 6649,
+      "atk": 176,
+      "def": 405,
+      "critDamage": 9.6
+    },
+    "70": {
+      "hp": 9837,
+      "atk": 261,
+      "def": 599,
+      "critDamage": 19.2
+    },
+    "90": {
+      "hp": 12858,
+      "atk": 342,
+      "def": 783,
+      "critDamage": 38.4
+    }
+  }
+}

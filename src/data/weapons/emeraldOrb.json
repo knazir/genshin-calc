@@ -1,0 +1,39 @@
+{
+  "name": "Emerald Orb",
+  "id": "emeraldOrb",
+  "type": "catalyst",
+  "baseStats": {
+    "1": {
+      "atk": 40,
+      "elementalMastery": 4
+    },
+    "20": {
+      "atk": 121,
+      "elementalMastery": 12
+    },
+    "40": {
+      "atk": 207,
+      "elementalMastery": 20
+    },
+    "50": {
+      "atk": 259,
+      "elementalMastery": 25
+    },
+    "60": {
+      "atk": 311,
+      "elementalMastery": 31
+    },
+    "70": {
+      "atk": 363,
+      "elementalMastery": 36
+    },
+    "80": {
+      "atk": 415,
+      "elementalMastery": 41
+    },
+    "90": {
+      "atk": 448,
+      "elementalMastery": 8
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Raiden Shogun",
+  "id": "raidenShogun",
+  "weapon": "polearm",
+  "element": "electro",
+  "baseStats": {
+    "20": {
+      "hp": 2606,
+      "atk": 68,
+      "def": 159
+    },
+    "50": {
+      "hp": 6674,
+      "atk": 174,
+      "def": 408,
+      "energyRecharge": 8
+    },
+    "70": {
+      "hp": 9875,
+      "atk": 258,
+      "def": 603,
+      "energyRecharge": 16
+    },
+    "90": {
+      "hp": 12907,
+      "atk": 337,
+      "def": 789,
+      "energyRecharge": 32
+    }
+  }
+}

@@ -4,22 +4,10 @@
   "weapon": "claymore",
   "element": "cryo",
   "baseStats": {
-    "1": {
-      "hp": 1029,
-      "atk": 26,
-      "def": 58,
-      "critDamage": 5
-    },
     "20": {
       "hp": 2670,
       "atk": 69,
       "def": 151
-    },
-    "40": {
-      "hp": 5944,
-      "atk": 153,
-      "def": 337,
-      "critDamage": 33
     },
     "50": {
       "hp": 6839,
@@ -27,23 +15,11 @@
       "def": 388,
       "critDamage": 9.6
     },
-    "60": {
-      "hp": 9206,
-      "atk": 238,
-      "def": 522,
-      "critDamage": 52
-    },
     "70": {
       "hp": 10118,
       "atk": 261,
       "def": 574,
       "critDamage": 19.2
-    },
-    "80": {
-      "hp": 12295,
-      "atk": 317,
-      "def": 698,
-      "critDamage": 69
     },
     "90": {
       "hp": 13225,

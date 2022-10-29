@@ -1,0 +1,39 @@
+{
+  "name": "Twin Nephrite",
+  "id": "twinNephrite",
+  "type": "catalyst",
+  "baseStats": {
+    "1": {
+      "atk": 40,
+      "critRate": 4
+    },
+    "20": {
+      "atk": 121,
+      "critRate": 12
+    },
+    "40": {
+      "atk": 207,
+      "critRate": 20
+    },
+    "50": {
+      "atk": 259,
+      "critRate": 25
+    },
+    "60": {
+      "atk": 311,
+      "critRate": 31
+    },
+    "70": {
+      "atk": 363,
+      "critRate": 36
+    },
+    "80": {
+      "atk": 415,
+      "critRate": 41
+    },
+    "90": {
+      "atk": 448,
+      "critRate": 14.2
+    }
+  }
+}

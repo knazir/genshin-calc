@@ -1,0 +1,39 @@
+{
+  "name": "The Alley Flash",
+  "id": "theAlleyFlash",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 45,
+      "elementalMastery": 4
+    },
+    "20": {
+      "atk": 154,
+      "elementalMastery": 15
+    },
+    "40": {
+      "atk": 273,
+      "elementalMastery": 27
+    },
+    "50": {
+      "atk": 347,
+      "elementalMastery": 34
+    },
+    "60": {
+      "atk": 421,
+      "elementalMastery": 42
+    },
+    "70": {
+      "atk": 496,
+      "elementalMastery": 49
+    },
+    "80": {
+      "atk": 571,
+      "elementalMastery": 57
+    },
+    "90": {
+      "atk": 620,
+      "elementalMastery": 5
+    }
+  }
+}

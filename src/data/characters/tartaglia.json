@@ -4,22 +4,10 @@
   "weapon": "bow",
   "element": "hydro",
   "baseStats": {
-    "1": {
-      "hp": 1020,
-      "atk": 23,
-      "def": 63,
-      "elementalBonus": 6
-    },
     "20": {
       "hp": 2646,
       "atk": 60,
       "def": 164
-    },
-    "40": {
-      "hp": 5889,
-      "atk": 135,
-      "def": 366,
-      "elementalBonus": 36
     },
     "50": {
       "hp": 6775,
@@ -27,23 +15,11 @@
       "def": 421,
       "elementalBonus": 7.2
     },
-    "60": {
-      "hp": 9121,
-      "atk": 209,
-      "def": 567,
-      "elementalBonus": 56
-    },
     "70": {
       "hp": 10025,
       "atk": 230,
       "def": 623,
       "elementalBonus": 14.4
-    },
-    "80": {
-      "hp": 12182,
-      "atk": 280,
-      "def": 757,
-      "elementalBonus": 75
     },
     "90": {
       "hp": 13103,

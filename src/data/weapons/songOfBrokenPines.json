@@ -1,0 +1,39 @@
+{
+  "name": "Song of Broken Pines",
+  "id": "songOfBrokenPines",
+  "type": "claymore",
+  "baseStats": {
+    "1": {
+      "atk": 49,
+      "elementalBonus": 4
+    },
+    "20": {
+      "atk": 176,
+      "elementalBonus": 17
+    },
+    "40": {
+      "atk": 317,
+      "elementalBonus": 31
+    },
+    "50": {
+      "atk": 406,
+      "elementalBonus": 40
+    },
+    "60": {
+      "atk": 495,
+      "elementalBonus": 49
+    },
+    "70": {
+      "atk": 586,
+      "elementalBonus": 58
+    },
+    "80": {
+      "atk": 679,
+      "elementalBonus": 67
+    },
+    "90": {
+      "atk": 741,
+      "elementalBonus": 18.9
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Deathmatch",
+  "id": "deathmatch",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 41,
+      "critRate": 4
+    },
+    "20": {
+      "atk": 125,
+      "critRate": 12
+    },
+    "40": {
+      "atk": 210,
+      "critRate": 21
+    },
+    "50": {
+      "atk": 264,
+      "critRate": 26
+    },
+    "60": {
+      "atk": 319,
+      "critRate": 31
+    },
+    "70": {
+      "atk": 373,
+      "critRate": 37
+    },
+    "80": {
+      "atk": 427,
+      "critRate": 42
+    },
+    "90": {
+      "atk": 454,
+      "critRate": 33.5
+    }
+  }
+}

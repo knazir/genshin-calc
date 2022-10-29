@@ -4,22 +4,10 @@
   "weapon": "claymore",
   "element": "pyro",
   "baseStats": {
-    "1": {
-      "hp": 1010,
-      "atk": 26,
-      "def": 61,
-      "critRate": 6
-    },
     "20": {
       "hp": 2621,
       "atk": 67,
       "def": 158
-    },
-    "40": {
-      "hp": 5834,
-      "atk": 150,
-      "def": 352,
-      "critRate": 35
     },
     "50": {
       "hp": 6712,
@@ -27,23 +15,11 @@
       "def": 405,
       "critRate": 4.8
     },
-    "60": {
-      "hp": 9036,
-      "atk": 233,
-      "def": 545,
-      "critRate": 54
-    },
     "70": {
       "hp": 9931,
       "atk": 256,
       "def": 599,
       "critRate": 9.6
-    },
-    "80": {
-      "hp": 12068,
-      "atk": 311,
-      "def": 728,
-      "critRate": 72
     },
     "90": {
       "hp": 12980,

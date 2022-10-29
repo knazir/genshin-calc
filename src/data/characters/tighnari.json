@@ -4,22 +4,10 @@
   "weapon": "bow",
   "element": "dendro",
   "baseStats": {
-    "1": {
-      "hp": 844,
-      "atk": 20,
-      "def": 49,
-      "elementalBonus": 4
-    },
     "20": {
       "hp": 2191,
       "atk": 54,
       "def": 127
-    },
-    "40": {
-      "hp": 4876,
-      "atk": 120,
-      "def": 283,
-      "elementalBonus": 28
     },
     "50": {
       "hp": 5610,
@@ -27,23 +15,11 @@
       "def": 325,
       "elementalBonus": 7.2
     },
-    "60": {
-      "hp": 7552,
-      "atk": 186,
-      "def": 438,
-      "elementalBonus": 43
-    },
     "70": {
       "hp": 8301,
       "atk": 204,
       "def": 482,
       "elementalBonus": 14.4
-    },
-    "80": {
-      "hp": 10087,
-      "atk": 249,
-      "def": 585,
-      "elementalBonus": 58
     },
     "90": {
       "hp": 10849,

@@ -4,22 +4,10 @@
   "weapon": "bow",
   "element": "geo",
   "baseStats": {
-    "1": {
-      "hp": 802,
-      "atk": 15,
-      "def": 54,
-      "elementalBonus": 5
-    },
     "20": {
       "hp": 2061,
       "atk": 39,
       "def": 139
-    },
-    "40": {
-      "hp": 4411,
-      "atk": 84,
-      "def": 298,
-      "elementalBonus": 29
     },
     "50": {
       "hp": 5074,
@@ -27,23 +15,11 @@
       "def": 343,
       "elementalBonus": 6
     },
-    "60": {
-      "hp": 6730,
-      "atk": 128,
-      "def": 456,
-      "elementalBonus": 45
-    },
     "70": {
       "hp": 7392,
       "atk": 141,
       "def": 500,
       "elementalBonus": 12
-    },
-    "80": {
-      "hp": 8907,
-      "atk": 170,
-      "def": 603,
-      "elementalBonus": 60
     },
     "90": {
       "hp": 9569,

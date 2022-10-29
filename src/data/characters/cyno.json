@@ -4,22 +4,10 @@
   "weapon": "polearm",
   "element": "electro",
   "baseStats": {
-    "1": {
-      "hp": 972,
-      "atk": 24,
-      "def": 66,
-      "critDamage": 6
-    },
     "20": {
       "hp": 2522,
       "atk": 64,
       "def": 173
-    },
-    "40": {
-      "hp": 5614,
-      "atk": 142,
-      "def": 386,
-      "critDamage": 38
     },
     "50": {
       "hp": 6459,
@@ -27,23 +15,11 @@
       "def": 444,
       "critDamage": 9.6
     },
-    "60": {
-      "hp": 8695,
-      "atk": 221,
-      "def": 598,
-      "critDamage": 59
-    },
     "70": {
       "hp": 9556,
       "atk": 243,
       "def": 657,
       "critDamage": 19.2
-    },
-    "80": {
-      "hp": 11612,
-      "atk": 295,
-      "def": 798,
-      "critDamage": 79
     },
     "90": {
       "hp": 12490,

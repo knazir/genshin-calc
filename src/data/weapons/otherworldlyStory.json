@@ -1,0 +1,39 @@
+{
+  "name": "Otherworldly Story",
+  "id": "otherworldlyStory",
+  "type": "catalyst",
+  "baseStats": {
+    "1": {
+      "atk": 39,
+      "energyRecharge": 3
+    },
+    "20": {
+      "atk": 113,
+      "energyRecharge": 11
+    },
+    "40": {
+      "atk": 189,
+      "energyRecharge": 18
+    },
+    "50": {
+      "atk": 236,
+      "energyRecharge": 23
+    },
+    "60": {
+      "atk": 282,
+      "energyRecharge": 28
+    },
+    "70": {
+      "atk": 329,
+      "energyRecharge": 32
+    },
+    "80": {
+      "atk": 375,
+      "energyRecharge": 37
+    },
+    "90": {
+      "atk": 401,
+      "energyRecharge": 35.6
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Skyrider Greatsword",
+  "id": "skyriderGreatsword",
+  "type": "claymore",
+  "baseStats": {
+    "1": {
+      "atk": 39,
+      "elementalBonus": 3
+    },
+    "20": {
+      "atk": 113,
+      "elementalBonus": 11
+    },
+    "40": {
+      "atk": 189,
+      "elementalBonus": 18
+    },
+    "50": {
+      "atk": 236,
+      "elementalBonus": 23
+    },
+    "60": {
+      "atk": 282,
+      "elementalBonus": 28
+    },
+    "70": {
+      "atk": 329,
+      "elementalBonus": 32
+    },
+    "80": {
+      "atk": 375,
+      "elementalBonus": 37
+    },
+    "90": {
+      "atk": 401,
+      "elementalBonus": 40.1
+    }
+  }
+}

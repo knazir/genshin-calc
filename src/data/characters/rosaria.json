@@ -4,22 +4,10 @@
   "weapon": "polearm",
   "element": "cryo",
   "baseStats": {
-    "1": {
-      "hp": 1030,
-      "atk": 20,
-      "def": 59,
-      "atkPercent": 5
-    },
     "20": {
       "hp": 2646,
       "atk": 51,
       "def": 152
-    },
-    "40": {
-      "hp": 5664,
-      "atk": 110,
-      "def": 327,
-      "atkPercent": 32
     },
     "50": {
       "hp": 6515,
@@ -27,23 +15,11 @@
       "def": 376,
       "atkPercent": 6
     },
-    "60": {
-      "hp": 8642,
-      "atk": 168,
-      "def": 499,
-      "atkPercent": 49
-    },
     "70": {
       "hp": 9492,
       "atk": 185,
       "def": 548,
       "atkPercent": 12
-    },
-    "80": {
-      "hp": 11437,
-      "atk": 223,
-      "def": 660,
-      "atkPercent": 66
     },
     "90": {
       "hp": 12288,

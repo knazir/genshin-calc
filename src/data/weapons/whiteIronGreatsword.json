@@ -1,0 +1,31 @@
+{
+  "name": "White Iron Greatsword",
+  "id": "whiteIronGreatsword",
+  "type": "claymore",
+  "baseStats": {
+    "1": {
+      "atk": 39
+    },
+    "20": {
+      "atk": 113
+    },
+    "40": {
+      "atk": 189
+    },
+    "50": {
+      "atk": 236
+    },
+    "60": {
+      "atk": 282
+    },
+    "70": {
+      "atk": 329
+    },
+    "80": {
+      "atk": 375
+    },
+    "90": {
+      "atk": 401
+    }
+  }
+}

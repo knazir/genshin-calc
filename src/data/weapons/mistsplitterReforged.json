@@ -1,0 +1,39 @@
+{
+  "name": "Mistsplitter Reforged",
+  "id": "mistsplitterReforged",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 48,
+      "critDamage": 4
+    },
+    "20": {
+      "atk": 164,
+      "critDamage": 16
+    },
+    "40": {
+      "atk": 292,
+      "critDamage": 29
+    },
+    "50": {
+      "atk": 373,
+      "critDamage": 37
+    },
+    "60": {
+      "atk": 455,
+      "critDamage": 45
+    },
+    "70": {
+      "atk": 537,
+      "critDamage": 53
+    },
+    "80": {
+      "atk": 621,
+      "critDamage": 62
+    },
+    "90": {
+      "atk": 674,
+      "critDamage": 40.2
+    }
+  }
+}

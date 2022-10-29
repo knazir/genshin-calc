@@ -1,0 +1,39 @@
+{
+  "name": "Aquila Favonia",
+  "id": "aquilaFavonia",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 48,
+      "elementalBonus": 4
+    },
+    "20": {
+      "atk": 164,
+      "elementalBonus": 16
+    },
+    "40": {
+      "atk": 292,
+      "elementalBonus": 29
+    },
+    "50": {
+      "atk": 373,
+      "elementalBonus": 37
+    },
+    "60": {
+      "atk": 455,
+      "elementalBonus": 45
+    },
+    "70": {
+      "atk": 537,
+      "elementalBonus": 53
+    },
+    "80": {
+      "atk": 621,
+      "elementalBonus": 62
+    },
+    "90": {
+      "atk": 674,
+      "elementalBonus": 37.7
+    }
+  }
+}

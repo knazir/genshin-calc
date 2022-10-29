@@ -1,0 +1,39 @@
+{
+  "name": "Kitain Cross Spear",
+  "id": "kitainCrossSpear",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 44,
+      "elementalMastery": 4
+    },
+    "20": {
+      "atk": 144,
+      "elementalMastery": 14
+    },
+    "40": {
+      "atk": 252,
+      "elementalMastery": 25
+    },
+    "50": {
+      "atk": 319,
+      "elementalMastery": 31
+    },
+    "60": {
+      "atk": 387,
+      "elementalMastery": 38
+    },
+    "70": {
+      "atk": 455,
+      "elementalMastery": 45
+    },
+    "80": {
+      "atk": 523,
+      "elementalMastery": 52
+    },
+    "90": {
+      "atk": 565,
+      "elementalMastery": 10
+    }
+  }
+}

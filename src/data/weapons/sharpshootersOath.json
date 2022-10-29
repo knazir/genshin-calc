@@ -1,0 +1,39 @@
+{
+  "name": "Sharpshooter's Oath",
+  "id": "sharpshootersOath",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 39,
+      "critDamage": 3
+    },
+    "20": {
+      "atk": 113,
+      "critDamage": 11
+    },
+    "40": {
+      "atk": 189,
+      "critDamage": 18
+    },
+    "50": {
+      "atk": 236,
+      "critDamage": 23
+    },
+    "60": {
+      "atk": 282,
+      "critDamage": 28
+    },
+    "70": {
+      "atk": 329,
+      "critDamage": 32
+    },
+    "80": {
+      "atk": 375,
+      "critDamage": 37
+    },
+    "90": {
+      "atk": 401,
+      "critDamage": 42.7
+    }
+  }
+}

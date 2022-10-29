@@ -1,0 +1,39 @@
+{
+  "name": "Prototype Amber",
+  "id": "prototypeAmber",
+  "type": "catalyst",
+  "baseStats": {
+    "1": {
+      "atk": 42,
+      "hpPercent": 4
+    },
+    "20": {
+      "atk": 135,
+      "hpPercent": 13
+    },
+    "40": {
+      "atk": 231,
+      "hpPercent": 23
+    },
+    "50": {
+      "atk": 292,
+      "hpPercent": 29
+    },
+    "60": {
+      "atk": 353,
+      "hpPercent": 35
+    },
+    "70": {
+      "atk": 414,
+      "hpPercent": 41
+    },
+    "80": {
+      "atk": 475,
+      "hpPercent": 47
+    },
+    "90": {
+      "atk": 510,
+      "hpPercent": 37.7
+    }
+  }
+}

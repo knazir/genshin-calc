@@ -1,0 +1,39 @@
+{
+  "name": "Magic Guide",
+  "id": "magicGuide",
+  "type": "catalyst",
+  "baseStats": {
+    "1": {
+      "atk": 38,
+      "elementalMastery": 3
+    },
+    "20": {
+      "atk": 105,
+      "elementalMastery": 10
+    },
+    "40": {
+      "atk": 171,
+      "elementalMastery": 17
+    },
+    "50": {
+      "atk": 212,
+      "elementalMastery": 21
+    },
+    "60": {
+      "atk": 253,
+      "elementalMastery": 25
+    },
+    "70": {
+      "atk": 294,
+      "elementalMastery": 29
+    },
+    "80": {
+      "atk": 334,
+      "elementalMastery": 33
+    },
+    "90": {
+      "atk": 354,
+      "elementalMastery": 17
+    }
+  }
+}

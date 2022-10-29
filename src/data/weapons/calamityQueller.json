@@ -1,0 +1,39 @@
+{
+  "name": "Calamity Queller",
+  "id": "calamityQueller",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 49,
+      "atkPercent": 4
+    },
+    "20": {
+      "atk": 176,
+      "atkPercent": 17
+    },
+    "40": {
+      "atk": 317,
+      "atkPercent": 31
+    },
+    "50": {
+      "atk": 406,
+      "atkPercent": 40
+    },
+    "60": {
+      "atk": 495,
+      "atkPercent": 49
+    },
+    "70": {
+      "atk": 586,
+      "atkPercent": 58
+    },
+    "80": {
+      "atk": 679,
+      "atkPercent": 67
+    },
+    "90": {
+      "atk": 741,
+      "atkPercent": 15.1
+    }
+  }
+}

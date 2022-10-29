@@ -1,0 +1,39 @@
+{
+  "name": "Halberd",
+  "id": "halberd",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 40,
+      "atkPercent": 4
+    },
+    "20": {
+      "atk": 121,
+      "atkPercent": 12
+    },
+    "40": {
+      "atk": 207,
+      "atkPercent": 20
+    },
+    "50": {
+      "atk": 259,
+      "atkPercent": 25
+    },
+    "60": {
+      "atk": 311,
+      "atkPercent": 31
+    },
+    "70": {
+      "atk": 363,
+      "atkPercent": 36
+    },
+    "80": {
+      "atk": 415,
+      "atkPercent": 41
+    },
+    "90": {
+      "atk": 448,
+      "atkPercent": 21.4
+    }
+  }
+}

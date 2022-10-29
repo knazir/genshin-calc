@@ -1,0 +1,39 @@
+{
+  "name": "Favonius Greatsword",
+  "id": "favoniusGreatsword",
+  "type": "claymore",
+  "baseStats": {
+    "1": {
+      "atk": 41,
+      "energyRecharge": 4
+    },
+    "20": {
+      "atk": 125,
+      "energyRecharge": 12
+    },
+    "40": {
+      "atk": 210,
+      "energyRecharge": 21
+    },
+    "50": {
+      "atk": 264,
+      "energyRecharge": 26
+    },
+    "60": {
+      "atk": 319,
+      "energyRecharge": 31
+    },
+    "70": {
+      "atk": 373,
+      "energyRecharge": 37
+    },
+    "80": {
+      "atk": 427,
+      "energyRecharge": 42
+    },
+    "90": {
+      "atk": 454,
+      "energyRecharge": 55.9
+    }
+  }
+}

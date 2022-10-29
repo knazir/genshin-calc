@@ -1,0 +1,39 @@
+{
+  "name": "Key of Khaj-Nisut",
+  "id": "keyOfKhajNisut",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 44,
+      "hpPercent": 4
+    },
+    "20": {
+      "atk": 141,
+      "hpPercent": 14
+    },
+    "40": {
+      "atk": 241,
+      "hpPercent": 24
+    },
+    "50": {
+      "atk": 307,
+      "hpPercent": 30
+    },
+    "60": {
+      "atk": 373,
+      "hpPercent": 37
+    },
+    "70": {
+      "atk": 439,
+      "hpPercent": 43
+    },
+    "80": {
+      "atk": 506,
+      "hpPercent": 50
+    },
+    "90": {
+      "atk": 542,
+      "hpPercent": 60.3
+    }
+  }
+}

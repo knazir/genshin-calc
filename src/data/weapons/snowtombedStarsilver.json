@@ -1,0 +1,39 @@
+{
+  "name": "Snow-Tombed Starsilver",
+  "id": "snowtombedStarsilver",
+  "type": "claymore",
+  "baseStats": {
+    "1": {
+      "atk": 44,
+      "elementalBonus": 4
+    },
+    "20": {
+      "atk": 144,
+      "elementalBonus": 14
+    },
+    "40": {
+      "atk": 252,
+      "elementalBonus": 25
+    },
+    "50": {
+      "atk": 319,
+      "elementalBonus": 31
+    },
+    "60": {
+      "atk": 387,
+      "elementalBonus": 38
+    },
+    "70": {
+      "atk": 455,
+      "elementalBonus": 45
+    },
+    "80": {
+      "atk": 523,
+      "elementalBonus": 52
+    },
+    "90": {
+      "atk": 565,
+      "elementalBonus": 31.5
+    }
+  }
+}

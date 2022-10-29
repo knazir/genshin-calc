@@ -1,0 +1,39 @@
+{
+  "name": "Elegy for the End",
+  "id": "elegyForTheEnd",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 46,
+      "energyRecharge": 4
+    },
+    "20": {
+      "atk": 153,
+      "energyRecharge": 15
+    },
+    "40": {
+      "atk": 266,
+      "energyRecharge": 26
+    },
+    "50": {
+      "atk": 340,
+      "energyRecharge": 34
+    },
+    "60": {
+      "atk": 414,
+      "energyRecharge": 41
+    },
+    "70": {
+      "atk": 488,
+      "energyRecharge": 48
+    },
+    "80": {
+      "atk": 563,
+      "energyRecharge": 56
+    },
+    "90": {
+      "atk": 608,
+      "energyRecharge": 50.3
+    }
+  }
+}

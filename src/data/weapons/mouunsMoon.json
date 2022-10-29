@@ -1,0 +1,39 @@
+{
+  "name": "Mouun's Moon",
+  "id": "mouunsMoon",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 44,
+      "atkPercent": 4
+    },
+    "20": {
+      "atk": 144,
+      "atkPercent": 14
+    },
+    "40": {
+      "atk": 252,
+      "atkPercent": 25
+    },
+    "50": {
+      "atk": 319,
+      "atkPercent": 31
+    },
+    "60": {
+      "atk": 387,
+      "atkPercent": 38
+    },
+    "70": {
+      "atk": 455,
+      "atkPercent": 45
+    },
+    "80": {
+      "atk": 523,
+      "atkPercent": 52
+    },
+    "90": {
+      "atk": 565,
+      "atkPercent": 25.1
+    }
+  }
+}

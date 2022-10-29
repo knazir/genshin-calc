@@ -1,0 +1,31 @@
+{
+  "name": "Kamisato Ayato",
+  "id": "kamisatoAyato",
+  "weapon": "sword",
+  "element": "hydro",
+  "baseStats": {
+    "20": {
+      "hp": 2769,
+      "atk": 60,
+      "def": 155
+    },
+    "50": {
+      "hp": 7092,
+      "atk": 154,
+      "def": 397,
+      "critDamage": 9.6
+    },
+    "70": {
+      "hp": 10493,
+      "atk": 228,
+      "def": 588,
+      "critDamage": 19.2
+    },
+    "90": {
+      "hp": 13715,
+      "atk": 298,
+      "def": 768,
+      "critDamage": 38.4
+    }
+  }
+}

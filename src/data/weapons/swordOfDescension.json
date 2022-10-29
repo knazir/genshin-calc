@@ -1,0 +1,39 @@
+{
+  "name": "Sword of Descension",
+  "id": "swordOfDescension",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 39,
+      "atkPercent": 3
+    },
+    "20": {
+      "atk": 120,
+      "atkPercent": 12
+    },
+    "40": {
+      "atk": 202,
+      "atkPercent": 20
+    },
+    "50": {
+      "atk": 255,
+      "atkPercent": 25
+    },
+    "60": {
+      "atk": 308,
+      "atkPercent": 30
+    },
+    "70": {
+      "atk": 361,
+      "atkPercent": 36
+    },
+    "80": {
+      "atk": 414,
+      "atkPercent": 41
+    },
+    "90": {
+      "atk": 440,
+      "atkPercent": 32.1
+    }
+  }
+}

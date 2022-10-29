@@ -1,0 +1,39 @@
+{
+  "name": "Dragonspine Spear",
+  "id": "dragonspineSpear",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 41,
+      "elementalBonus": 4
+    },
+    "20": {
+      "atk": 125,
+      "elementalBonus": 12
+    },
+    "40": {
+      "atk": 210,
+      "elementalBonus": 21
+    },
+    "50": {
+      "atk": 264,
+      "elementalBonus": 26
+    },
+    "60": {
+      "atk": 319,
+      "elementalBonus": 31
+    },
+    "70": {
+      "atk": 373,
+      "elementalBonus": 37
+    },
+    "80": {
+      "atk": 427,
+      "elementalBonus": 42
+    },
+    "90": {
+      "atk": 454,
+      "elementalBonus": 62.9
+    }
+  }
+}

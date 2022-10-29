@@ -1,0 +1,31 @@
+{
+  "name": "Kuki Shinobu",
+  "id": "kukiShinobu",
+  "weapon": "sword",
+  "element": "electro",
+  "baseStats": {
+    "20": {
+      "hp": 2646,
+      "atk": 45,
+      "def": 161
+    },
+    "50": {
+      "hp": 6515,
+      "atk": 112,
+      "def": 398,
+      "hpPercent": 6
+    },
+    "70": {
+      "hp": 9492,
+      "atk": 164,
+      "def": 579,
+      "hpPercent": 12
+    },
+    "90": {
+      "hp": 12288,
+      "atk": 212,
+      "def": 750,
+      "hpPercent": 24
+    }
+  }
+}

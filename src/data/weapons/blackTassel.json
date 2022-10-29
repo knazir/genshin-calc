@@ -1,0 +1,39 @@
+{
+  "name": "Black Tassel",
+  "id": "blackTassel",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 38,
+      "hpPercent": 3
+    },
+    "20": {
+      "atk": 105,
+      "hpPercent": 10
+    },
+    "40": {
+      "atk": 171,
+      "hpPercent": 17
+    },
+    "50": {
+      "atk": 212,
+      "hpPercent": 21
+    },
+    "60": {
+      "atk": 253,
+      "hpPercent": 25
+    },
+    "70": {
+      "atk": 294,
+      "hpPercent": 29
+    },
+    "80": {
+      "atk": 334,
+      "hpPercent": 33
+    },
+    "90": {
+      "atk": 354,
+      "hpPercent": 42.7
+    }
+  }
+}

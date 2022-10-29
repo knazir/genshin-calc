@@ -1,0 +1,39 @@
+{
+  "name": "Wolf's Gravestone",
+  "id": "wolfsGravestone",
+  "type": "claymore",
+  "baseStats": {
+    "1": {
+      "atk": 46,
+      "atkPercent": 4
+    },
+    "20": {
+      "atk": 153,
+      "atkPercent": 15
+    },
+    "40": {
+      "atk": 266,
+      "atkPercent": 26
+    },
+    "50": {
+      "atk": 340,
+      "atkPercent": 34
+    },
+    "60": {
+      "atk": 414,
+      "atkPercent": 41
+    },
+    "70": {
+      "atk": 488,
+      "atkPercent": 48
+    },
+    "80": {
+      "atk": 563,
+      "atkPercent": 56
+    },
+    "90": {
+      "atk": 608,
+      "atkPercent": 45.3
+    }
+  }
+}

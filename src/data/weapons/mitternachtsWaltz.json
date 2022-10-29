@@ -1,0 +1,39 @@
+{
+  "name": "Mitternachts Waltz",
+  "id": "mitternachtsWaltz",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 42,
+      "elementalBonus": 4
+    },
+    "20": {
+      "atk": 135,
+      "elementalBonus": 13
+    },
+    "40": {
+      "atk": 231,
+      "elementalBonus": 23
+    },
+    "50": {
+      "atk": 292,
+      "elementalBonus": 29
+    },
+    "60": {
+      "atk": 353,
+      "elementalBonus": 35
+    },
+    "70": {
+      "atk": 414,
+      "elementalBonus": 41
+    },
+    "80": {
+      "atk": 475,
+      "elementalBonus": 47
+    },
+    "90": {
+      "atk": 510,
+      "elementalBonus": 47.2
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Blackcliff Agate",
+  "id": "blackcliffAgate",
+  "type": "catalyst",
+  "baseStats": {
+    "1": {
+      "atk": 42,
+      "critDamage": 4
+    },
+    "20": {
+      "atk": 135,
+      "critDamage": 13
+    },
+    "40": {
+      "atk": 231,
+      "critDamage": 23
+    },
+    "50": {
+      "atk": 292,
+      "critDamage": 29
+    },
+    "60": {
+      "atk": 353,
+      "critDamage": 35
+    },
+    "70": {
+      "atk": 414,
+      "critDamage": 41
+    },
+    "80": {
+      "atk": 475,
+      "critDamage": 47
+    },
+    "90": {
+      "atk": 510,
+      "critDamage": 50.3
+    }
+  }
+}

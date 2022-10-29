@@ -1,0 +1,39 @@
+{
+  "name": "Kagura's Verity",
+  "id": "kagurasVerity",
+  "type": "catalyst",
+  "baseStats": {
+    "1": {
+      "atk": 46,
+      "critDamage": 4
+    },
+    "20": {
+      "atk": 153,
+      "critDamage": 15
+    },
+    "40": {
+      "atk": 266,
+      "critDamage": 26
+    },
+    "50": {
+      "atk": 340,
+      "critDamage": 34
+    },
+    "60": {
+      "atk": 414,
+      "critDamage": 41
+    },
+    "70": {
+      "atk": 488,
+      "critDamage": 48
+    },
+    "80": {
+      "atk": 563,
+      "critDamage": 56
+    },
+    "90": {
+      "atk": 608,
+      "critDamage": 60.3
+    }
+  }
+}

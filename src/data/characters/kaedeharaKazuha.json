@@ -1,0 +1,28 @@
+{
+  "name": "Kaedehara Kazuha",
+  "id": "kaedeharaKazuha",
+  "weapon": "sword",
+  "element": "anemo",
+  "baseStats": {
+    "20": {
+      "hp": 2695,
+      "atk": 59,
+      "def": 162
+    },
+    "50": {
+      "hp": 6902,
+      "atk": 153,
+      "def": 417
+    },
+    "70": {
+      "hp": 10212,
+      "atk": 226,
+      "def": 617
+    },
+    "90": {
+      "hp": 13348,
+      "atk": 296,
+      "def": 806
+    }
+  }
+}

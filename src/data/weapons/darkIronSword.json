@@ -1,0 +1,39 @@
+{
+  "name": "Dark Iron Sword",
+  "id": "darkIronSword",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 39,
+      "elementalMastery": 3
+    },
+    "20": {
+      "atk": 113,
+      "elementalMastery": 11
+    },
+    "40": {
+      "atk": 189,
+      "elementalMastery": 18
+    },
+    "50": {
+      "atk": 236,
+      "elementalMastery": 23
+    },
+    "60": {
+      "atk": 282,
+      "elementalMastery": 28
+    },
+    "70": {
+      "atk": 329,
+      "elementalMastery": 32
+    },
+    "80": {
+      "atk": 375,
+      "elementalMastery": 37
+    },
+    "90": {
+      "atk": 401,
+      "elementalMastery": 12
+    }
+  }
+}

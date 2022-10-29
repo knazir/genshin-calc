@@ -1,0 +1,39 @@
+{
+  "name": "Primordial Jade Cutter",
+  "id": "primordialJadeCutter",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 44,
+      "critRate": 4
+    },
+    "20": {
+      "atk": 141,
+      "critRate": 14
+    },
+    "40": {
+      "atk": 241,
+      "critRate": 24
+    },
+    "50": {
+      "atk": 307,
+      "critRate": 30
+    },
+    "60": {
+      "atk": 373,
+      "critRate": 37
+    },
+    "70": {
+      "atk": 439,
+      "critRate": 43
+    },
+    "80": {
+      "atk": 506,
+      "critRate": 50
+    },
+    "90": {
+      "atk": 542,
+      "critRate": 40.2
+    }
+  }
+}

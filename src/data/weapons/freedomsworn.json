@@ -1,0 +1,39 @@
+{
+  "name": "Freedom-Sworn",
+  "id": "freedomsworn",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 46,
+      "elementalMastery": 4
+    },
+    "20": {
+      "atk": 153,
+      "elementalMastery": 15
+    },
+    "40": {
+      "atk": 266,
+      "elementalMastery": 26
+    },
+    "50": {
+      "atk": 340,
+      "elementalMastery": 34
+    },
+    "60": {
+      "atk": 414,
+      "elementalMastery": 41
+    },
+    "70": {
+      "atk": 488,
+      "elementalMastery": 48
+    },
+    "80": {
+      "atk": 563,
+      "elementalMastery": 56
+    },
+    "90": {
+      "atk": 608,
+      "elementalMastery": 18
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Thrilling Tales of Dragon Slayers",
+  "id": "thrillingTalesOfDragonSlayers",
+  "type": "catalyst",
+  "baseStats": {
+    "1": {
+      "atk": 39,
+      "hpPercent": 3
+    },
+    "20": {
+      "atk": 113,
+      "hpPercent": 11
+    },
+    "40": {
+      "atk": 189,
+      "hpPercent": 18
+    },
+    "50": {
+      "atk": 236,
+      "hpPercent": 23
+    },
+    "60": {
+      "atk": 282,
+      "hpPercent": 28
+    },
+    "70": {
+      "atk": 329,
+      "hpPercent": 32
+    },
+    "80": {
+      "atk": 375,
+      "hpPercent": 37
+    },
+    "90": {
+      "atk": 401,
+      "hpPercent": 32.1
+    }
+  }
+}

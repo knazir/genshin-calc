@@ -1,0 +1,39 @@
+{
+  "name": "Skyrider Sword",
+  "id": "skyriderSword",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 38,
+      "energyRecharge": 3
+    },
+    "20": {
+      "atk": 105,
+      "energyRecharge": 10
+    },
+    "40": {
+      "atk": 171,
+      "energyRecharge": 17
+    },
+    "50": {
+      "atk": 212,
+      "energyRecharge": 21
+    },
+    "60": {
+      "atk": 253,
+      "energyRecharge": 25
+    },
+    "70": {
+      "atk": 294,
+      "energyRecharge": 29
+    },
+    "80": {
+      "atk": 334,
+      "energyRecharge": 33
+    },
+    "90": {
+      "atk": 354,
+      "energyRecharge": 47.2
+    }
+  }
+}

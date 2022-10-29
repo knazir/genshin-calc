@@ -1,0 +1,31 @@
+{
+  "name": "Traveler's Handy Sword",
+  "id": "travelersHandySword",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 40
+    },
+    "20": {
+      "atk": 121
+    },
+    "40": {
+      "atk": 207
+    },
+    "50": {
+      "atk": 259
+    },
+    "60": {
+      "atk": 311
+    },
+    "70": {
+      "atk": 363
+    },
+    "80": {
+      "atk": 415
+    },
+    "90": {
+      "atk": 448
+    }
+  }
+}

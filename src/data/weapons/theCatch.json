@@ -1,0 +1,39 @@
+{
+  "name": "\"The Catch\"",
+  "id": "theCatch",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 42,
+      "energyRecharge": 4
+    },
+    "20": {
+      "atk": 135,
+      "energyRecharge": 13
+    },
+    "40": {
+      "atk": 231,
+      "energyRecharge": 23
+    },
+    "50": {
+      "atk": 292,
+      "energyRecharge": 29
+    },
+    "60": {
+      "atk": 353,
+      "energyRecharge": 35
+    },
+    "70": {
+      "atk": 414,
+      "energyRecharge": 41
+    },
+    "80": {
+      "atk": 475,
+      "energyRecharge": 47
+    },
+    "90": {
+      "atk": 510,
+      "energyRecharge": 41.9
+    }
+  }
+}

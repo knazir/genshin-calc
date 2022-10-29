@@ -1,0 +1,39 @@
+{
+  "name": "Polar Star",
+  "id": "polarStar",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 46,
+      "critRate": 4
+    },
+    "20": {
+      "atk": 153,
+      "critRate": 15
+    },
+    "40": {
+      "atk": 266,
+      "critRate": 26
+    },
+    "50": {
+      "atk": 340,
+      "critRate": 34
+    },
+    "60": {
+      "atk": 414,
+      "critRate": 41
+    },
+    "70": {
+      "atk": 488,
+      "critRate": 48
+    },
+    "80": {
+      "atk": 563,
+      "critRate": 56
+    },
+    "90": {
+      "atk": 608,
+      "critRate": 30.2
+    }
+  }
+}

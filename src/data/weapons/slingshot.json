@@ -1,0 +1,39 @@
+{
+  "name": "Slingshot",
+  "id": "slingshot",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 38,
+      "critRate": 3
+    },
+    "20": {
+      "atk": 105,
+      "critRate": 10
+    },
+    "40": {
+      "atk": 171,
+      "critRate": 17
+    },
+    "50": {
+      "atk": 212,
+      "critRate": 21
+    },
+    "60": {
+      "atk": 253,
+      "critRate": 25
+    },
+    "70": {
+      "atk": 294,
+      "critRate": 29
+    },
+    "80": {
+      "atk": 334,
+      "critRate": 33
+    },
+    "90": {
+      "atk": 354,
+      "critRate": 28.5
+    }
+  }
+}

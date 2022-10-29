@@ -4,22 +4,10 @@
   "weapon": "sword",
   "element": "anemo",
   "baseStats": {
-    "1": {
-      "hp": 1143,
-      "atk": 18,
-      "def": 59,
-      "healingBonus": 5
-    },
     "20": {
       "hp": 2967,
       "atk": 48,
       "def": 155
-    },
-    "40": {
-      "hp": 6604,
-      "atk": 107,
-      "def": 345,
-      "healingBonus": 34
     },
     "50": {
       "hp": 7599,
@@ -27,23 +15,11 @@
       "def": 397,
       "healingBonus": 5.5
     },
-    "60": {
-      "hp": 10229,
-      "atk": 166,
-      "def": 535,
-      "healingBonus": 53
-    },
     "70": {
       "hp": 11243,
       "atk": 182,
       "def": 588,
       "healingBonus": 11
-    },
-    "80": {
-      "hp": 13662,
-      "atk": 222,
-      "def": 714,
-      "healingBonus": 71
     },
     "90": {
       "hp": 14695,

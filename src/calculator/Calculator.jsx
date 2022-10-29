@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core";
 
 import characters from "../data/characters";
+import weapons from "../data/weapons";
 
 import ArtifactUtils from "../utils/ArtifactUtils";
 import ArtifactsTab from "./ArtifactsTab";
@@ -22,29 +23,23 @@ import DamageUtils from "../utils/DamageUtils";
 
 import "./Calculator.css";
 
-const getBaseCharacterStatsByLevel = ({ baseCharacter, level }) => {
+const getBaseCharacterStatsByLevel = ({ baseCharacter, characterLevel }) => {
   let permanentBaseCharacterStats = {
     critRate: 5,
     critDamage: 50,
     energyRecharge: 100
   };
 
-  if (!baseCharacter || level === "") {
+  if (!baseCharacter || characterLevel === "") {
     return permanentBaseCharacterStats;
   }
 
-  if (characters[baseCharacter][level]) {
-    return ArtifactUtils.filterEmptyStats(
-      ArtifactUtils.addStats(permanentBaseCharacterStats, characters[baseCharacter][level])
-    );
-  }
-
-  // Find nearest matching level (floor) to provided
+  // Find nearest matching level (floor) to provide
   let baseCharacterStats = {};
-  if (level === 0) level = 1;
+  if (characterLevel === 0) characterLevel = 1;
   baseCharacterStats = {};
   for (const [specifiedLevel, baseStats] of Object.entries(characters[baseCharacter].baseStats)) {
-    if (specifiedLevel <= level) {
+    if (specifiedLevel <= characterLevel) {
       baseCharacterStats = baseStats;
     } else {
       break;
@@ -55,6 +50,26 @@ const getBaseCharacterStatsByLevel = ({ baseCharacter, level }) => {
   );
 };
 
+const getBaseWeaponStatsByLevel = ({ baseWeapon, weaponLevel }) => {
+  let baseWeaponStats = {};
+
+  if (!baseWeapon || weaponLevel === "") {
+    return baseWeaponStats;
+  }
+
+  // Find nearest matching level (floor) to provide
+  if (weaponLevel === 0) weaponLevel = 1;
+  for (const [specifiedLevel, baseStats] of Object.entries(weapons[baseWeapon].baseStats)) {
+    if (specifiedLevel <= weaponLevel) {
+      baseWeaponStats = baseStats;
+    } else {
+      break;
+    }
+  }
+
+  return ArtifactUtils.filterEmptyStats(baseWeaponStats);
+};
+
 const Calculator = ({ data }) => {
   // State
   const [isSavePopupVisible, setIsSavePopupVisible] = useState(false);
@@ -62,8 +77,10 @@ const Calculator = ({ data }) => {
   const [tab, setTab] = useState(0);
   const [character, setCharacter] = useState(data.character || {
     baseCharacter: "",
+    characterLevel: "",
     weaponType: "",
-    level: ""
+    baseWeapon: "",
+    weaponLevel: ""
   });
   const [enemy, setEnemy] = useState(data.enemy || {
     level: 83,
@@ -143,7 +160,7 @@ const Calculator = ({ data }) => {
                    skill={skill} onSkill={setSkill} elementalBonus={finalStats.elementalBonus}/>,
     <BaseStatsTab key="baseStats" character={character} baseCharacterStats={getBaseCharacterStatsByLevel(character)}
                   characterStats={characterStats} onCharacterStats={setCharacterStats}
-                  weaponStats={weaponStats} onWeaponStats={setWeaponStats}/>,
+                  baseWeaponStats={getBaseWeaponStatsByLevel(character)} weaponStats={weaponStats} onWeaponStats={setWeaponStats}/>,
     <ArtifactsTab key="artifacts" flowerStats={flowerStats} onFlowerStats={setFlowerStats} featherStats={featherStats}
                   onFeatherStats={setFeatherStats} timepieceStats={timepieceStats}
                   onTimepieceStats={setTimepieceStats} gobletStats={gobletStats} onGobletStats={setGobletStats}

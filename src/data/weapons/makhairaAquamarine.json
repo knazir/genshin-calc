@@ -1,0 +1,39 @@
+{
+  "name": "Makhaira Aquamarine",
+  "id": "makhairaAquamarine",
+  "type": "claymore",
+  "baseStats": {
+    "1": {
+      "atk": 42,
+      "elementalMastery": 4
+    },
+    "20": {
+      "atk": 135,
+      "elementalMastery": 13
+    },
+    "40": {
+      "atk": 231,
+      "elementalMastery": 23
+    },
+    "50": {
+      "atk": 292,
+      "elementalMastery": 29
+    },
+    "60": {
+      "atk": 353,
+      "elementalMastery": 35
+    },
+    "70": {
+      "atk": 414,
+      "elementalMastery": 41
+    },
+    "80": {
+      "atk": 475,
+      "elementalMastery": 47
+    },
+    "90": {
+      "atk": 510,
+      "elementalMastery": 15
+    }
+  }
+}

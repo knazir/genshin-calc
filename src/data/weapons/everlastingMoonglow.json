@@ -1,0 +1,39 @@
+{
+  "name": "Everlasting Moonglow",
+  "id": "everlastingMoonglow",
+  "type": "catalyst",
+  "baseStats": {
+    "1": {
+      "atk": 46,
+      "hpPercent": 4
+    },
+    "20": {
+      "atk": 153,
+      "hpPercent": 15
+    },
+    "40": {
+      "atk": 266,
+      "hpPercent": 26
+    },
+    "50": {
+      "atk": 340,
+      "hpPercent": 34
+    },
+    "60": {
+      "atk": 414,
+      "hpPercent": 41
+    },
+    "70": {
+      "atk": 488,
+      "hpPercent": 48
+    },
+    "80": {
+      "atk": 563,
+      "hpPercent": 56
+    },
+    "90": {
+      "atk": 608,
+      "hpPercent": 45.3
+    }
+  }
+}

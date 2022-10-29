@@ -1,0 +1,39 @@
+{
+  "name": "Wavebreaker's Fin",
+  "id": "wavebreakersFin",
+  "type": "polearm",
+  "baseStats": {
+    "1": {
+      "atk": 45,
+      "atkPercent": 4
+    },
+    "20": {
+      "atk": 154,
+      "atkPercent": 15
+    },
+    "40": {
+      "atk": 273,
+      "atkPercent": 27
+    },
+    "50": {
+      "atk": 347,
+      "atkPercent": 34
+    },
+    "60": {
+      "atk": 421,
+      "atkPercent": 42
+    },
+    "70": {
+      "atk": 496,
+      "atkPercent": 49
+    },
+    "80": {
+      "atk": 571,
+      "atkPercent": 57
+    },
+    "90": {
+      "atk": 620,
+      "atkPercent": 12.5
+    }
+  }
+}

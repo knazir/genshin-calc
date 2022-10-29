@@ -1,0 +1,39 @@
+{
+  "name": "Royal Longsword",
+  "id": "royalLongsword",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 42,
+      "atkPercent": 4
+    },
+    "20": {
+      "atk": 135,
+      "atkPercent": 13
+    },
+    "40": {
+      "atk": 231,
+      "atkPercent": 23
+    },
+    "50": {
+      "atk": 292,
+      "atkPercent": 29
+    },
+    "60": {
+      "atk": 353,
+      "atkPercent": 35
+    },
+    "70": {
+      "atk": 414,
+      "atkPercent": 41
+    },
+    "80": {
+      "atk": 475,
+      "atkPercent": 47
+    },
+    "90": {
+      "atk": 510,
+      "atkPercent": 37.7
+    }
+  }
+}

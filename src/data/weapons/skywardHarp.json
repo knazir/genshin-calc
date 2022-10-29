@@ -1,0 +1,39 @@
+{
+  "name": "Skyward Harp",
+  "id": "skywardHarp",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 48,
+      "critRate": 4
+    },
+    "20": {
+      "atk": 164,
+      "critRate": 16
+    },
+    "40": {
+      "atk": 292,
+      "critRate": 29
+    },
+    "50": {
+      "atk": 373,
+      "critRate": 37
+    },
+    "60": {
+      "atk": 455,
+      "critRate": 45
+    },
+    "70": {
+      "atk": 537,
+      "critRate": 53
+    },
+    "80": {
+      "atk": 621,
+      "critRate": 62
+    },
+    "90": {
+      "atk": 674,
+      "critRate": 20.1
+    }
+  }
+}

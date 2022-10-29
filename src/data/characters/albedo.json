@@ -4,22 +4,10 @@
   "weapon": "sword",
   "element": "geo",
   "baseStats": {
-    "1": {
-      "hp": 1029,
-      "atk": 19,
-      "def": 68,
-      "elementalBonus": 6
-    },
     "20": {
       "hp": 2670,
       "atk": 50,
       "def": 176
-    },
-    "40": {
-      "hp": 5944,
-      "atk": 112,
-      "def": 393,
-      "elementalBonus": 39
     },
     "50": {
       "hp": 6839,
@@ -27,23 +15,11 @@
       "def": 453,
       "elementalBonus": 7.2
     },
-    "60": {
-      "hp": 9206,
-      "atk": 174,
-      "def": 609,
-      "elementalBonus": 60
-    },
     "70": {
       "hp": 10118,
       "atk": 192,
       "def": 670,
       "elementalBonus": 14.4
-    },
-    "80": {
-      "hp": 12295,
-      "atk": 233,
-      "def": 814,
-      "elementalBonus": 81
     },
     "90": {
       "hp": 13225,

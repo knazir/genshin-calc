@@ -4,22 +4,10 @@
   "weapon": "bow",
   "element": "cryo",
   "baseStats": {
-    "1": {
-      "hp": 762,
-      "atk": 26,
-      "def": 49,
-      "critDamage": 4
-    },
     "20": {
       "hp": 1978,
       "atk": 67,
       "def": 127
-    },
-    "40": {
-      "hp": 4403,
-      "atk": 150,
-      "def": 283,
-      "critDamage": 28
     },
     "50": {
       "hp": 5066,
@@ -27,23 +15,11 @@
       "def": 325,
       "critDamage": 9.6
     },
-    "60": {
-      "hp": 6819,
-      "atk": 233,
-      "def": 438,
-      "critDamage": 43
-    },
     "70": {
       "hp": 7495,
       "atk": 256,
       "def": 482,
       "critDamage": 19.2
-    },
-    "80": {
-      "hp": 9108,
-      "atk": 311,
-      "def": 585,
-      "critDamage": 58
     },
     "90": {
       "hp": 9796,

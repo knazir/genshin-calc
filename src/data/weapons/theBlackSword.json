@@ -1,0 +1,39 @@
+{
+  "name": "The Black Sword",
+  "id": "theBlackSword",
+  "type": "sword",
+  "baseStats": {
+    "1": {
+      "atk": 42,
+      "critRate": 4
+    },
+    "20": {
+      "atk": 135,
+      "critRate": 13
+    },
+    "40": {
+      "atk": 231,
+      "critRate": 23
+    },
+    "50": {
+      "atk": 292,
+      "critRate": 29
+    },
+    "60": {
+      "atk": 353,
+      "critRate": 35
+    },
+    "70": {
+      "atk": 414,
+      "critRate": 41
+    },
+    "80": {
+      "atk": 475,
+      "critRate": 47
+    },
+    "90": {
+      "atk": 510,
+      "critRate": 25.1
+    }
+  }
+}

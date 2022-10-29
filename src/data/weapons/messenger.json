@@ -1,0 +1,39 @@
+{
+  "name": "Messenger",
+  "id": "messenger",
+  "type": "bow",
+  "baseStats": {
+    "1": {
+      "atk": 40,
+      "critDamage": 4
+    },
+    "20": {
+      "atk": 121,
+      "critDamage": 12
+    },
+    "40": {
+      "atk": 207,
+      "critDamage": 20
+    },
+    "50": {
+      "atk": 259,
+      "critDamage": 25
+    },
+    "60": {
+      "atk": 311,
+      "critDamage": 31
+    },
+    "70": {
+      "atk": 363,
+      "critDamage": 36
+    },
+    "80": {
+      "atk": 415,
+      "critDamage": 41
+    },
+    "90": {
+      "atk": 448,
+      "critDamage": 28.5
+    }
+  }
+}
