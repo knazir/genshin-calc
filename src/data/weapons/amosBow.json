@@ -25,15 +25,15 @@
     },
     "70": {
       "atk": 488,
-      "atkPercent": 48
+      "atkPercent": 40.9
     },
     "80": {
       "atk": 563,
-      "atkPercent": 56
+      "atkPercent": 45.3
     },
     "90": {
       "atk": 608,
-      "atkPercent": 45.3
+      "atkPercent": 49.6
     }
   }
 }

@@ -126,8 +126,7 @@ const Calculator = ({ data }) => {
     setEffectsStats, miscStats, specialStats
   ]);
   useEffect(() => {
-    setFinalStats(ArtifactUtils.getFinalStats(characterStats, weaponStats, baseStats, artifactsStats, miscStats,
-                                              specialStats));
+    setFinalStats(ArtifactUtils.getFinalStats(weaponStats, baseStats, artifactsStats, miscStats, specialStats));
   }, [character, characterStats, weaponStats, baseStats, artifactsStats, miscStats, specialStats]);
 
   // Event Handlers

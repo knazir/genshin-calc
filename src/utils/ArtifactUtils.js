@@ -21,8 +21,7 @@ export default class ArtifactUtils {
     return this._roundStats(totalStats);
   }
 
-  static getFinalStats(characterStats, weaponStats, baseStats, artifactsStats, miscStats, specialStats) {
-    characterStats = this._filledStats(characterStats);
+  static getFinalStats(weaponStats, baseStats, artifactsStats, miscStats, specialStats) {
     weaponStats = this._filledStats(weaponStats);
     baseStats = this._filledStats(baseStats);
     artifactsStats = this._filledStats(artifactsStats);
@@ -36,12 +35,12 @@ export default class ArtifactUtils {
 
     // DEF
     const defPercent = this._sumStats("defPercent", baseStats, artifactsStats, miscStats);
-    const scaledDef = MathUtils.percentIncrease(characterStats.def, defPercent);
+    const scaledDef = MathUtils.percentIncrease(baseStats.def, defPercent);
     finalStats.def = Math.ceil(scaledDef + weaponStats.def + artifactsStats.def + miscStats.def);
 
     // HP
     const hpPercent = this._sumStats("hpPercent", baseStats, artifactsStats, miscStats);
-    const scaledHp = MathUtils.percentIncrease(characterStats.hp, hpPercent);
+    const scaledHp = MathUtils.percentIncrease(baseStats.hp, hpPercent);
     finalStats.hp = Math.ceil(scaledHp + weaponStats.hp + artifactsStats.hp + miscStats.hp);
 
     // Simple-Summed Stats

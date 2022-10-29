@@ -15,17 +15,15 @@ const EnemyInfoPanel = ({ defaultData, onData, character }) => {
   const [elementalResReduction, setElementalResReduction] = useState(defaultData.elementalResReduction);
   const [defenseReduction, setDefenseReduction] = useState(defaultData.defenseReduction);
   const [defense, setDefense] = useState(DamageUtils.getEnemyDefense(level));
-  const [defenseMult, setDefenseMult] = useState(DamageUtils.getEnemyDefenseMultiplier(character.level, level,
-                                                                                       defenseReduction));
-  const [resMult, setRestMult] = useState(DamageUtils.getEnemyResistanceMultiplier(elementalRes,
-                                                                                   elementalResReduction));
+  const [defenseMult, setDefenseMult] = useState(DamageUtils.getEnemyDefenseMultiplier(character.characterLevel, level, defenseReduction));
+  const [resMult, setRestMult] = useState(DamageUtils.getEnemyResistanceMultiplier(elementalRes, elementalResReduction));
 
   // Effects
   useEffect(() => {
     setDefense(DamageUtils.getEnemyDefense(level));
   }, [level]);
   useEffect(() => {
-    setDefenseMult(DamageUtils.getEnemyDefenseMultiplier(character.level, level, defenseReduction));
+    setDefenseMult(DamageUtils.getEnemyDefenseMultiplier(character.characterLevel, level, defenseReduction));
   }, [character, level, defenseReduction]);
   useEffect(() => {
     setRestMult(DamageUtils.getEnemyResistanceMultiplier(elementalRes, elementalResReduction));

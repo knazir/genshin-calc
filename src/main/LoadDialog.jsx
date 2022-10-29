@@ -32,7 +32,8 @@ const LoadDialog = ({ open, setOpen, onSaveDataSubmit }) => {
         action: "Load",
         label: btoa(JSON.stringify(saveData, null, 2))
       });
-    } catch {
+    } catch (err) {
+      console.error(err); 
       setError("Could not parse save data, please check that it is correctly formatted.");
     }
   };

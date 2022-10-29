@@ -53,10 +53,10 @@ const ExpectedDamageTab = ({ character, enemy, skill, finalStats, defaultErBonus
     const reactionMult = DamageUtils.getReactionMultiplier(type, skill.element);
     const elementalMasteryMult = DamageUtils.getElementalMasteryMultiplier(type, finalStats.elementalMastery);
     const elementalReactionMult = erBonuses[type] || 0;
-    const elementalNonCrit = DamageUtils.getElementalReactionDamage(type, baseNonCrit, character.level, reactionMult,
+    const elementalNonCrit = DamageUtils.getElementalReactionDamage(type, baseNonCrit, character.characterLevel, reactionMult,
                                                                     elementalMasteryMult, enemy.resMult,
                                                                     elementalReactionMult);
-    const elementalCrit = DamageUtils.getElementalReactionDamage(type, baseCrit, character.level, reactionMult,
+    const elementalCrit = DamageUtils.getElementalReactionDamage(type, baseCrit, character.characterLevel, reactionMult,
                                                                  elementalMasteryMult, enemy.resMult,
                                                                  elementalReactionMult);
     const elementalAverage = DamageUtils.getAverageDamage(elementalNonCrit, elementalCrit, finalStats.critRate);

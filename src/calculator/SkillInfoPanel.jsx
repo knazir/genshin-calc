@@ -53,7 +53,7 @@ const SkillInfoPanel = ({ defaultData, onData, elementalBonus }) => {
   };
 
   // DOM Elements
-  const elementItems = Object.values(elements).map(([elId, elName]) => {
+  const elementItems = Object.entries(elements).map(([elId, elName]) => {
     return <MenuItem key={elId} value={elId}>{StringUtils.capitalize(elName)}</MenuItem>;
   });
   const doesShatterCheckbox = <Checkbox checked={doesShatter} onChange={onDoesShatter}/>;

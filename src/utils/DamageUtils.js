@@ -18,7 +18,7 @@ export default class DamageUtils {
     if (defenseReduction > 0) {
       result = Math.round((characterLevel + 100) / (characterLevel + enemyLevel + 200));
     } else {
-      result = (characterLevel + 100) / ((1 - (defenseReduction / 100)) * (enemyLevel + 100) + characterLevel + 100);
+      result = (characterLevel + 100) / ((1 - (defenseReduction / 100)) * (enemyLevel + 100) + (characterLevel + 100));
     }
     return MathUtils.roundToDecimals(result, 2);
   }
