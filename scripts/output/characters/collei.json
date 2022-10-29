@@ -1,0 +1,55 @@
+{
+  "name": "Collei",
+  "id": "collei",
+  "weapon": "bow",
+  "element": "dendro",
+  "baseStats": {
+    "1": {
+      "hp": 820,
+      "atk": 16,
+      "def": 50,
+      "atkPercent": 5
+    },
+    "20": {
+      "hp": 2108,
+      "atk": 43,
+      "def": 129
+    },
+    "40": {
+      "hp": 4511,
+      "atk": 92,
+      "def": 276,
+      "atkPercent": 27
+    },
+    "50": {
+      "hp": 5189,
+      "atk": 105,
+      "def": 318,
+      "atkPercent": 6
+    },
+    "60": {
+      "hp": 6883,
+      "atk": 140,
+      "def": 422,
+      "atkPercent": 42
+    },
+    "70": {
+      "hp": 7560,
+      "atk": 154,
+      "def": 463,
+      "atkPercent": 12
+    },
+    "80": {
+      "hp": 9109,
+      "atk": 185,
+      "def": 559,
+      "atkPercent": 55
+    },
+    "90": {
+      "hp": 9787,
+      "atk": 199,
+      "def": 600,
+      "atkPercent": 24
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Klee",
+  "id": "klee",
+  "weapon": "catalyst",
+  "element": "pyro",
+  "baseStats": {
+    "1": {
+      "hp": 800,
+      "atk": 24,
+      "def": 47,
+      "elementalBonus": 4
+    },
+    "20": {
+      "hp": 2077,
+      "atk": 62,
+      "def": 124
+    },
+    "40": {
+      "hp": 4623,
+      "atk": 139,
+      "def": 276,
+      "elementalBonus": 27
+    },
+    "50": {
+      "hp": 5319,
+      "atk": 160,
+      "def": 317,
+      "elementalBonus": 7.2
+    },
+    "60": {
+      "hp": 7160,
+      "atk": 216,
+      "def": 428,
+      "elementalBonus": 42
+    },
+    "70": {
+      "hp": 7870,
+      "atk": 237,
+      "def": 470,
+      "elementalBonus": 14.4
+    },
+    "80": {
+      "hp": 9563,
+      "atk": 289,
+      "def": 571,
+      "elementalBonus": 57
+    },
+    "90": {
+      "hp": 10286,
+      "atk": 310,
+      "def": 614,
+      "elementalBonus": 28.8
+    }
+  }
+}

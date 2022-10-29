@@ -1,0 +1,55 @@
+{
+  "name": "Xiao",
+  "id": "xiao",
+  "weapon": "polearm",
+  "element": "anemo",
+  "baseStats": {
+    "1": {
+      "hp": 991,
+      "atk": 27,
+      "def": 62,
+      "critRate": 6
+    },
+    "20": {
+      "hp": 2571,
+      "atk": 70,
+      "def": 161
+    },
+    "40": {
+      "hp": 5724,
+      "atk": 156,
+      "def": 359,
+      "critRate": 35
+    },
+    "50": {
+      "hp": 6585,
+      "atk": 180,
+      "def": 413,
+      "critRate": 4.8
+    },
+    "60": {
+      "hp": 8865,
+      "atk": 243,
+      "def": 556,
+      "critRate": 55
+    },
+    "70": {
+      "hp": 9744,
+      "atk": 267,
+      "def": 611,
+      "critRate": 9.6
+    },
+    "80": {
+      "hp": 11840,
+      "atk": 324,
+      "def": 743,
+      "critRate": 74
+    },
+    "90": {
+      "hp": 12735,
+      "atk": 349,
+      "def": 799,
+      "critRate": 19.2
+    }
+  }
+}

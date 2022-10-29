@@ -1,0 +1,55 @@
+{
+  "name": "Mona",
+  "id": "mona",
+  "weapon": "catalyst",
+  "element": "hydro",
+  "baseStats": {
+    "1": {
+      "hp": 810,
+      "atk": 22,
+      "def": 50,
+      "energyRecharge": 5
+    },
+    "20": {
+      "hp": 2101,
+      "atk": 57,
+      "def": 131
+    },
+    "40": {
+      "hp": 4678,
+      "atk": 129,
+      "def": 293,
+      "energyRecharge": 29
+    },
+    "50": {
+      "hp": 5382,
+      "atk": 148,
+      "def": 337,
+      "energyRecharge": 8
+    },
+    "60": {
+      "hp": 7245,
+      "atk": 199,
+      "def": 454,
+      "energyRecharge": 45
+    },
+    "70": {
+      "hp": 7963,
+      "atk": 219,
+      "def": 499,
+      "energyRecharge": 16
+    },
+    "80": {
+      "hp": 9677,
+      "atk": 266,
+      "def": 607,
+      "energyRecharge": 60
+    },
+    "90": {
+      "hp": 10409,
+      "atk": 287,
+      "def": 653,
+      "energyRecharge": 32
+    }
+  }
+}

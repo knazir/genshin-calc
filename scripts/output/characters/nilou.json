@@ -1,0 +1,55 @@
+{
+  "name": "Nilou",
+  "id": "nilou",
+  "weapon": "sword",
+  "element": "hydro",
+  "baseStats": {
+    "1": {
+      "hp": 1182,
+      "atk": 17,
+      "def": 56,
+      "hpPercent": 5
+    },
+    "20": {
+      "hp": 3066,
+      "atk": 46,
+      "def": 147
+    },
+    "40": {
+      "hp": 6825,
+      "atk": 103,
+      "def": 327,
+      "hpPercent": 32
+    },
+    "50": {
+      "hp": 7852,
+      "atk": 118,
+      "def": 376,
+      "hpPercent": 7.2
+    },
+    "60": {
+      "hp": 10570,
+      "atk": 159,
+      "def": 507,
+      "hpPercent": 50
+    },
+    "70": {
+      "hp": 11617,
+      "atk": 175,
+      "def": 557,
+      "hpPercent": 14.4
+    },
+    "80": {
+      "hp": 14117,
+      "atk": 213,
+      "def": 677,
+      "hpPercent": 67
+    },
+    "90": {
+      "hp": 15184,
+      "atk": 229,
+      "def": 728,
+      "hpPercent": 28.8
+    }
+  }
+}

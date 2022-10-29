@@ -1,0 +1,55 @@
+{
+  "name": "Razor",
+  "id": "razor",
+  "weapon": "claymore",
+  "element": "electro",
+  "baseStats": {
+    "1": {
+      "hp": 1002,
+      "atk": 19,
+      "def": 62,
+      "elementalBonus": 6
+    },
+    "20": {
+      "hp": 2576,
+      "atk": 50,
+      "def": 161
+    },
+    "40": {
+      "hp": 5514,
+      "atk": 107,
+      "def": 346,
+      "elementalBonus": 34
+    },
+    "50": {
+      "hp": 6342,
+      "atk": 123,
+      "def": 398,
+      "elementalBonus": 7.5
+    },
+    "60": {
+      "hp": 8413,
+      "atk": 164,
+      "def": 528,
+      "elementalBonus": 52
+    },
+    "70": {
+      "hp": 9240,
+      "atk": 180,
+      "def": 579,
+      "elementalBonus": 15
+    },
+    "80": {
+      "hp": 11133,
+      "atk": 217,
+      "def": 698,
+      "elementalBonus": 69
+    },
+    "90": {
+      "hp": 11962,
+      "atk": 233,
+      "def": 750,
+      "elementalBonus": 30
+    }
+  }
+}

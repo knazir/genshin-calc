@@ -1,0 +1,55 @@
+{
+  "name": "Bennett",
+  "id": "bennett",
+  "weapon": "sword",
+  "element": "pyro",
+  "baseStats": {
+    "1": {
+      "hp": 1039,
+      "atk": 16,
+      "def": 64,
+      "energyRecharge": 6
+    },
+    "20": {
+      "hp": 2670,
+      "atk": 41,
+      "def": 166
+    },
+    "40": {
+      "hp": 5714,
+      "atk": 88,
+      "def": 355,
+      "energyRecharge": 35
+    },
+    "50": {
+      "hp": 6573,
+      "atk": 101,
+      "def": 408,
+      "energyRecharge": 6.7
+    },
+    "60": {
+      "hp": 8719,
+      "atk": 134,
+      "def": 542,
+      "energyRecharge": 54
+    },
+    "70": {
+      "hp": 9576,
+      "atk": 147,
+      "def": 595,
+      "energyRecharge": 13.4
+    },
+    "80": {
+      "hp": 11538,
+      "atk": 177,
+      "def": 717,
+      "energyRecharge": 71
+    },
+    "90": {
+      "hp": 12397,
+      "atk": 191,
+      "def": 771,
+      "energyRecharge": 26.8
+    }
+  }
+}

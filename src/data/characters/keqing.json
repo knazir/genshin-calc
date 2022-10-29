@@ -1,0 +1,55 @@
+{
+  "name": "Keqing",
+  "id": "keqing",
+  "weapon": "sword",
+  "element": "electro",
+  "baseStats": {
+    "1": {
+      "hp": 1020,
+      "atk": 25,
+      "def": 62,
+      "critDamage": 6
+    },
+    "20": {
+      "hp": 2646,
+      "atk": 65,
+      "def": 161
+    },
+    "40": {
+      "hp": 5889,
+      "atk": 145,
+      "def": 359,
+      "critDamage": 35
+    },
+    "50": {
+      "hp": 6775,
+      "atk": 166,
+      "def": 413,
+      "critDamage": 9.6
+    },
+    "60": {
+      "hp": 9121,
+      "atk": 224,
+      "def": 556,
+      "critDamage": 55
+    },
+    "70": {
+      "hp": 10025,
+      "atk": 247,
+      "def": 611,
+      "critDamage": 19.2
+    },
+    "80": {
+      "hp": 12182,
+      "atk": 300,
+      "def": 743,
+      "critDamage": 74
+    },
+    "90": {
+      "hp": 13103,
+      "atk": 322,
+      "def": 799,
+      "critDamage": 38.4
+    }
+  }
+}

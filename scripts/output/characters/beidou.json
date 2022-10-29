@@ -1,0 +1,55 @@
+{
+  "name": "Beidou",
+  "id": "beidou",
+  "weapon": "claymore",
+  "element": "electro",
+  "baseStats": {
+    "1": {
+      "hp": 1094,
+      "atk": 18,
+      "def": 54,
+      "elementalBonus": 5
+    },
+    "20": {
+      "hp": 2810,
+      "atk": 48,
+      "def": 139
+    },
+    "40": {
+      "hp": 6015,
+      "atk": 103,
+      "def": 298,
+      "elementalBonus": 29
+    },
+    "50": {
+      "hp": 6919,
+      "atk": 119,
+      "def": 343,
+      "elementalBonus": 6
+    },
+    "60": {
+      "hp": 9178,
+      "atk": 158,
+      "def": 456,
+      "elementalBonus": 45
+    },
+    "70": {
+      "hp": 10080,
+      "atk": 173,
+      "def": 500,
+      "elementalBonus": 12
+    },
+    "80": {
+      "hp": 12146,
+      "atk": 209,
+      "def": 603,
+      "elementalBonus": 60
+    },
+    "90": {
+      "hp": 13049,
+      "atk": 225,
+      "def": 648,
+      "elementalBonus": 24
+    }
+  }
+}

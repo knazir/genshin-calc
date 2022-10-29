@@ -1,0 +1,55 @@
+{
+  "name": "Kaeya",
+  "id": "kaeya",
+  "weapon": "sword",
+  "element": "cryo",
+  "baseStats": {
+    "1": {
+      "hp": 975,
+      "atk": 18,
+      "def": 66,
+      "energyRecharge": 6
+    },
+    "20": {
+      "hp": 2506,
+      "atk": 48,
+      "def": 170
+    },
+    "40": {
+      "hp": 5363,
+      "atk": 102,
+      "def": 364,
+      "energyRecharge": 36
+    },
+    "50": {
+      "hp": 6169,
+      "atk": 118,
+      "def": 419,
+      "energyRecharge": 6.7
+    },
+    "60": {
+      "hp": 8183,
+      "atk": 156,
+      "def": 556,
+      "energyRecharge": 55
+    },
+    "70": {
+      "hp": 8988,
+      "atk": 172,
+      "def": 611,
+      "energyRecharge": 13.4
+    },
+    "80": {
+      "hp": 10830,
+      "atk": 207,
+      "def": 736,
+      "energyRecharge": 73
+    },
+    "90": {
+      "hp": 11636,
+      "atk": 223,
+      "def": 791,
+      "energyRecharge": 26.8
+    }
+  }
+}

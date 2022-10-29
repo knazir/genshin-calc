@@ -1,0 +1,55 @@
+{
+  "name": "Yoimiya",
+  "id": "yoimiya",
+  "weapon": "bow",
+  "element": "pyro",
+  "baseStats": {
+    "1": {
+      "hp": 791,
+      "atk": 25,
+      "def": 47,
+      "critRate": 4
+    },
+    "20": {
+      "hp": 2052,
+      "atk": 65,
+      "def": 124
+    },
+    "40": {
+      "hp": 4568,
+      "atk": 145,
+      "def": 276,
+      "critRate": 27
+    },
+    "50": {
+      "hp": 5256,
+      "atk": 166,
+      "def": 317,
+      "critRate": 4.8
+    },
+    "60": {
+      "hp": 7075,
+      "atk": 224,
+      "def": 428,
+      "critRate": 42
+    },
+    "70": {
+      "hp": 7776,
+      "atk": 247,
+      "def": 470,
+      "critRate": 9.6
+    },
+    "80": {
+      "hp": 9449,
+      "atk": 300,
+      "def": 571,
+      "critRate": 57
+    },
+    "90": {
+      "hp": 10164,
+      "atk": 322,
+      "def": 614,
+      "critRate": 19.2
+    }
+  }
+}

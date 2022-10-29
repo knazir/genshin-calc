@@ -1,0 +1,55 @@
+{
+  "name": "Kuki Shinobu",
+  "id": "kuki",
+  "weapon": "sword",
+  "element": "electro",
+  "baseStats": {
+    "1": {
+      "hp": 1030,
+      "atk": 17,
+      "def": 62,
+      "hpPercent": 6
+    },
+    "20": {
+      "hp": 2646,
+      "atk": 45,
+      "def": 161
+    },
+    "40": {
+      "hp": 5664,
+      "atk": 97,
+      "def": 346,
+      "hpPercent": 34
+    },
+    "50": {
+      "hp": 6515,
+      "atk": 112,
+      "def": 398,
+      "hpPercent": 6
+    },
+    "60": {
+      "hp": 8642,
+      "atk": 149,
+      "def": 528,
+      "hpPercent": 52
+    },
+    "70": {
+      "hp": 9492,
+      "atk": 164,
+      "def": 579,
+      "hpPercent": 12
+    },
+    "80": {
+      "hp": 11437,
+      "atk": 197,
+      "def": 698,
+      "hpPercent": 69
+    },
+    "90": {
+      "hp": 12288,
+      "atk": 212,
+      "def": 750,
+      "hpPercent": 24
+    }
+  }
+}
