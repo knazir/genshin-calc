@@ -9,41 +9,67 @@ import {
   Typography,
 } from "@material-ui/core";
 
+import characters from "../data/characters";
 import weapons from "../data/weapons";
+
+import StringUtils from "../utils/StringUtils";
 
 const CharacterInfoPanel = ({ defaultData, onData }) => {
   // State
-  const [level, setLevel] = useState(defaultData.level);
+  const [baseCharacter, setBaseCharacter] = useState(defaultData.baseCharacter);
   const [weaponType, setWeaponType] = useState(defaultData.weaponType);
+  const [level, setLevel] = useState(defaultData.level);
 
   // Effects
   useEffect(() => {
-    onData({ level, weaponType });
-  }, [level, weaponType]);
+    onData({ baseCharacter, level, weaponType });
+  }, [baseCharacter, weaponType, level]);
 
   // Event Handlers
   const onLevel = e => {
-    setLevel(e.target.value === "" ? "" : Number(e.target.value));
+    const level = e.target.value === "" ? "" : Number(e.target.value);
+    setLevel(level);
   };
   const onWeaponType = e => {
     setWeaponType(e.target.value);
   };
+  const onBaseCharacter = e => {
+    const charId = e.target.value;
+    const character = characters[charId];
+
+    setBaseCharacter(charId);
+    setWeaponType(character.weapon);
+
+    let maxLevel = 0;
+    const levels = Object.keys(characters[charId].baseStats);
+    const maxLevelWithStats = levels.reduce((a, b) => Math.max(a, b), -Infinity);
+    setLevel(maxLevelWithStats);
+  }
 
   // DOM Elements
-  const weaponTypeItems = Object.entries(weapons).map(([wepType, wepName]) => {
-    return <MenuItem key={wepType} value={wepType}>{wepName}</MenuItem>;
+  const baseCharacterItems = Object.entries(characters).map(([charId, charData]) => {
+    return <MenuItem key={charId} value={charId}>{charData.name}</MenuItem>;
+  });
+  const weaponTypeItems = Object.entries(weapons).map(([wepId, wepName]) => {
+    return <MenuItem key={wepId} value={wepId}>{StringUtils.capitalize(wepName)}</MenuItem>;
   });
 
   return (
     <Paper className="formPanel">
       <Typography variant="h5">Character Info</Typography>
-      <TextField id="characterLevel" label="Level" type="number" value={level} onChange={onLevel}/>
+      <FormControl>
+        <InputLabel id="characterLabel">Character</InputLabel>
+        <Select id="character" labelId="characterLabel" value={baseCharacter} onChange={onBaseCharacter}>
+          {baseCharacterItems}
+        </Select>
+      </FormControl>
       <FormControl>
         <InputLabel id="weaponTypeLabel">Weapon</InputLabel>
         <Select id="weaponType" labelId="weaponTypeLabel" value={weaponType} onChange={onWeaponType}>
           {weaponTypeItems}
         </Select>
       </FormControl>
+      <TextField id="characterLevel" label="Level" type="number" value={level} onChange={onLevel}/>
     </Paper>
   );
 };

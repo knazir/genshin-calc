@@ -6,6 +6,8 @@ import {
   Typography,
 } from "@material-ui/core";
 
+import characters from "../data/characters";
+
 import ArtifactUtils from "../utils/ArtifactUtils";
 import ArtifactsTab from "./ArtifactsTab";
 import BaseStatsTab from "./BaseStatsTab";
@@ -20,14 +22,48 @@ import DamageUtils from "../utils/DamageUtils";
 
 import "./Calculator.css";
 
+const getBaseCharacterStatsByLevel = ({ baseCharacter, level }) => {
+  let permanentBaseCharacterStats = {
+    critRate: 5,
+    critDamage: 50,
+    energyRecharge: 100
+  };
+
+  if (!baseCharacter || level === "") {
+    return permanentBaseCharacterStats;
+  }
+
+  if (characters[baseCharacter][level]) {
+    return ArtifactUtils.filterEmptyStats(
+      ArtifactUtils.addStats(permanentBaseCharacterStats, characters[baseCharacter][level])
+    );
+  }
+
+  // Find nearest matching level (floor) to provided
+  let baseCharacterStats = {};
+  if (level === 0) level = 1;
+  baseCharacterStats = {};
+  for (const [specifiedLevel, baseStats] of Object.entries(characters[baseCharacter].baseStats)) {
+    if (specifiedLevel <= level) {
+      baseCharacterStats = baseStats;
+    } else {
+      break;
+    }
+  }
+  return ArtifactUtils.filterEmptyStats(
+    ArtifactUtils.addStats(permanentBaseCharacterStats, baseCharacterStats)
+  );
+};
+
 const Calculator = ({ data }) => {
   // State
   const [isSavePopupVisible, setIsSavePopupVisible] = useState(false);
   const [saveData, setSaveData] = useState({});
   const [tab, setTab] = useState(0);
   const [character, setCharacter] = useState(data.character || {
-    level: 90,
+    baseCharacter: "",
     weaponType: "",
+    level: ""
   });
   const [enemy, setEnemy] = useState(data.enemy || {
     level: 83,
@@ -42,14 +78,7 @@ const Calculator = ({ data }) => {
     doesShatter: false,
     doesApplyElementalBonus: true
   });
-  const [characterStats, setCharacterStats] = useState(data.characterStats || {
-    atk: 0,
-    def: 0,
-    hp: 0,
-    critRate: 5,
-    critDamage: 50,
-    energyRecharge: 100
-  });
+  const [characterStats, setCharacterStats] = useState(data.characterStats || {});
   const [weaponStats, setWeaponStats] = useState(data.weaponStats || {});
   const [setEffectsStats, setSetEffectsStats] = useState(data.setEffectsStats || {});
   const [flowerStats, setFlowerStats] = useState(data.flowerStats || {
@@ -70,17 +99,18 @@ const Calculator = ({ data }) => {
 
   // Effects
   useEffect(() => {
-    setBaseStats(ArtifactUtils.addStats(characterStats, weaponStats));
+    const baseCharacterStats = getBaseCharacterStatsByLevel(character);
+    setBaseStats(ArtifactUtils.addStats(baseCharacterStats, characterStats, weaponStats));
     setArtifactsStats(ArtifactUtils.addStats(flowerStats, featherStats, timepieceStats, gobletStats, hatStats,
                                              setEffectsStats));
   }, [
-    characterStats, weaponStats, flowerStats, featherStats, timepieceStats, gobletStats, hatStats, setEffectsStats,
-    miscStats, specialStats
+    character, characterStats, weaponStats, flowerStats, featherStats, timepieceStats, gobletStats, hatStats,
+    setEffectsStats, miscStats, specialStats
   ]);
   useEffect(() => {
     setFinalStats(ArtifactUtils.getFinalStats(characterStats, weaponStats, baseStats, artifactsStats, miscStats,
                                               specialStats));
-  }, [characterStats, weaponStats, baseStats, artifactsStats, miscStats, specialStats]);
+  }, [character, characterStats, weaponStats, baseStats, artifactsStats, miscStats, specialStats]);
 
   // Event Handlers
   const onSave = () => {
@@ -111,7 +141,8 @@ const Calculator = ({ data }) => {
   const tabPanels = [
     <DamageInfoTab key="damage" character={character} onCharacter={setCharacter} enemy={enemy} onEnemy={setEnemy}
                    skill={skill} onSkill={setSkill} elementalBonus={finalStats.elementalBonus}/>,
-    <BaseStatsTab key="baseStats" characterStats={characterStats} onCharacterStats={setCharacterStats}
+    <BaseStatsTab key="baseStats" character={character} baseCharacterStats={getBaseCharacterStatsByLevel(character)}
+                  characterStats={characterStats} onCharacterStats={setCharacterStats}
                   weaponStats={weaponStats} onWeaponStats={setWeaponStats}/>,
     <ArtifactsTab key="artifacts" flowerStats={flowerStats} onFlowerStats={setFlowerStats} featherStats={featherStats}
                   onFeatherStats={setFeatherStats} timepieceStats={timepieceStats}

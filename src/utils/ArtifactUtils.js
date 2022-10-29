@@ -3,6 +3,14 @@ import MathUtils from "./MathUtils";
 import stats from "../data/stats";
 
 export default class ArtifactUtils {
+  static filterEmptyStats(stats) {
+    const newStats = Object.assign({}, stats);
+    for (const [stat, value] of Object.entries(newStats)) {
+      if (!value) delete newStats[stat];
+    }
+    return newStats;
+  }
+
   static addStats(...artifacts) {
     const totalStats = this._filledStats({});
     artifacts.forEach(artifact => {

@@ -1,7 +1,7 @@
 export default {
-  bow: "Bow",
-  catalyst: "Catalyst",
-  claymore: "Claymore",
-  polearm: "Polearm",
-  sword: "Sword"
+  bow: "bow",
+  catalyst: "catalyst",
+  claymore: "claymore",
+  polearm: "polearm",
+  sword: "sword"
 };

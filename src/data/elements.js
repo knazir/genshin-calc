@@ -1,10 +1,10 @@
 export default {
-  anemo: "Anemo",
-  cryo: "Cryo",
-  dendro: "Dendro",
-  electro: "Electro",
-  geo: "Geo",
-  hydro: "Hydro",
-  physical: "Physical",
-  pyro: "Pyro"
+  anemo: "anemo",
+  cryo: "cryo",
+  dendro: "dendro",
+  electro: "electro",
+  geo: "geo",
+  hydro: "hydro",
+  physical: "physical",
+  pyro: "pyro"
 };

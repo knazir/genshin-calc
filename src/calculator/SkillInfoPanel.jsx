@@ -12,8 +12,10 @@ import {
   Typography,
 } from "@material-ui/core";
 
-import DamageUtils from "../utils/DamageUtils";
 import elements from "../data/elements";
+
+import DamageUtils from "../utils/DamageUtils";
+import StringUtils from "../utils/StringUtils";
 
 const SkillInfoPanel = ({ defaultData, onData, elementalBonus }) => {
   // State
@@ -51,8 +53,8 @@ const SkillInfoPanel = ({ defaultData, onData, elementalBonus }) => {
   };
 
   // DOM Elements
-  const elementItems = Object.values(elements).map(([elKey, elName]) => {
-    return <MenuItem key={elKey} value={elKey}>{elName}</MenuItem>;
+  const elementItems = Object.values(elements).map(([elId, elName]) => {
+    return <MenuItem key={elId} value={elId}>{StringUtils.capitalize(elName)}</MenuItem>;
   });
   const doesShatterCheckbox = <Checkbox checked={doesShatter} onChange={onDoesShatter}/>;
   const doesApplyElementalBonusCheckbox = <Checkbox checked={doesApplyElementalBonus}
