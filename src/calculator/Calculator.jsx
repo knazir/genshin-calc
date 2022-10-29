@@ -117,7 +117,8 @@ const Calculator = ({ data }) => {
   // Effects
   useEffect(() => {
     const baseCharacterStats = getBaseCharacterStatsByLevel(character);
-    setBaseStats(ArtifactUtils.addStats(baseCharacterStats, characterStats, weaponStats));
+    const baseWeaponStats = getBaseWeaponStatsByLevel(character);
+    setBaseStats(ArtifactUtils.addStats(baseCharacterStats, characterStats, weaponStats, baseWeaponStats));
     setArtifactsStats(ArtifactUtils.addStats(flowerStats, featherStats, timepieceStats, gobletStats, hatStats,
                                              setEffectsStats));
   }, [
