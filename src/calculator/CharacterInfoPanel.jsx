@@ -9,8 +9,6 @@ import {
   Typography,
 } from "@material-ui/core";
 
-import StringUtils from "../utils/StringUtils";
-
 import weapons from "../data/weapons";
 
 const CharacterInfoPanel = ({ defaultData, onData }) => {
@@ -32,8 +30,8 @@ const CharacterInfoPanel = ({ defaultData, onData }) => {
   };
 
   // DOM Elements
-  const weaponTypeItems = Object.keys(weapons).map(type => {
-    return <MenuItem key={type} value={type}>{StringUtils.capitalize(type)}</MenuItem>;
+  const weaponTypeItems = Object.entries(weapons).map(([wepType, wepName]) => {
+    return <MenuItem key={wepType} value={wepType}>{wepName}</MenuItem>;
   });
 
   return (

@@ -5,6 +5,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
+if (module.hot) {
+  module.hot.accept();
+}
+
 ReactDOM.render(
   <Router>
     <App/>
