@@ -62,7 +62,7 @@ export default class DamageUtils {
     const typeMap = {
       anemo: ["swirl"],
       cryo: ["melt", "superconduct"],
-      dendro: [],
+      dendro: ["bloom", "burgeon", "hyperbloom"],
       electro: ["overload", "superconduct", "electroCharge"],
       geo: ["shatter"],
       hydro: ["vaporize", "electroCharge"],
@@ -85,12 +85,16 @@ export default class DamageUtils {
   }
 
   static getElementalMasteryMultiplier(type, elementalMastery) {
+    const transformativeReactions = ["overload", "superconduct", "electroCharge", "shatter",
+                                     "swirl", "bloom", "burgeon", "hyperbloom"];
+
     let multiplier = 1;
     if (type === "vaporize" || type === "melt") {
       multiplier = 2.78;
-    } else if (["overload", "superconduct", "electroCharge", "shatter", "swirl"].indexOf(type) !== -1) {
+    } else if (transformativeReactions.indexOf(type) !== -1) {
       multiplier = 6.66;
     }
+    
     const result = (multiplier * (elementalMastery / (1400 + elementalMastery))) * 100;
     return MathUtils.roundToDecimals(result, 1);
   }

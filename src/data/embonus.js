@@ -6,7 +6,12 @@ export default {
     shatter: "Shatter",
     superconduct: "Superconduct",
     swirl: "Swirl",
-    vaporize: "Vaporize"
+    vaporize: "Vaporize",
+    bloom: "Bloom",
+    burgeon: "Burgeon",
+    hyperbloom: "Hyperbloom",
+    aggravate: "Aggravate",
+    spread: "Spread"
   },
   multipliers: {
     electroCharge: 2.4,
